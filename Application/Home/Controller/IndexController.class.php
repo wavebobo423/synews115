@@ -4,6 +4,8 @@ use Think\Controller;
 use Home\Controller\InitController;
 class IndexController extends InitController {
     public function Index(){
+
+        
     	$model=D('Gameinfo');
 
         // redis缓存时间
