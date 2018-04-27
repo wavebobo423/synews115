@@ -5,8 +5,10 @@ use Home\Controller\InitController;
 class IndexController extends InitController {
     public function Index(){
 
-        
+
     	$model=D('Gameinfo');
+
+        $news="aaa";
 
         // redis缓存时间
         $redisTime=86400;
