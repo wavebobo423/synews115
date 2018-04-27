@@ -1,0 +1,120 @@
+<block name="title">
+    <title>手游礼包,手游礼包领取中心,手机游戏礼包大全 礼包-115手机游戏</title>
+</block>
+<block name="keywords">
+    <meta name="keywords" content="手游礼包,手游礼包领取中心,手游礼包大全">
+</block>
+<block name="description">
+    <meta name="description" content="115游戏发号中心是手游玩家最喜爱的手游礼包领取平台，提供特权礼包、激活码、新手卡、新服礼包、礼包兑换码、发号内测账号等信息，免费手机游戏礼包等你来领取！">
+</block>
+<extend name="Public:main" />
+<block name="main"> 
+<link rel="stylesheet" href="__PUBLIC__/Home/lbxq/newfah.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/lbxq/newfah.js"></script> 
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<style>
+    body{
+      background:white;
+    }
+</style>
+        <style type="text/css">
+            #siteNav .layout{width: 950px;}
+        </style>
+        
+
+        <div class="main">
+            <div class="weizhi">
+                <p>
+                    当前位置：<a href="__MODULE__/Index">首页</a>&nbsp;&gt;&nbsp;<a href="__MODULE__/Lb">礼包</a>
+                </p>
+            </div>
+            <div class="wrap clearfix">
+                <div class="main_lf">
+                    <div class="wrap1" style="display:block">
+                        <div class="wrap_tt"><span></span>领取中心</div>
+                        <div class="wrap_list">
+                            <dl class="clearfix"><dt>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</dt><dd><a class="<?php echo  $_SESSION['lb_select1']?>" href="__MODULE__/Lborder/news">最新</a><a class="<?php echo  $_SESSION['lb_select2']?>" href="__MODULE__/Lborder/istj">热门</a></dd>
+                            </dl> 
+                        </div>
+                    </div>
+                    <div class="wrap2">
+                        <div class="wrap_tt" style="display:none"><span></span>最新礼包<em>共找到<i>586</i>个</em></div>
+                        <div class="warp2_list">
+                    <ul class="clearfix">
+            <?php foreach($Data['lbinfo'] as $k=>$v){
+                    $Game=M('Gameinfo')->where("id=".$v['gamename'])->find();
+                ?>
+                        <li>
+                            <div class="imgli"><a href="<?php echo U('Lbxq/'.$v['id']);?>" target="_blank"><img src="__PUBLIC__/Upload/Product/<?php echo $Game['logo']?>" alt="<?php echo $v['lbname']?>"></a></div>
+                            <div class="txtli">
+                                <p class="ptitle"><a href="<?php echo U('Lbxq/'.$v['id']);?>" target="_blank"><?php echo $v['lbname']?></a></p>
+                                <p class="ptxt"><?php echo $v['content']?></p>
+                                <p class="plq">
+                                      <?php 
+                                            $os=explode(",",$v['os']);
+                                            if($os[0]==1){
+                                        ?>
+                                        <span class="az" style="display:display "></span>
+                                         <?php } if($os[1]==2  OR $os[0]==2){?>    
+                                        <span class="ios" style="display:display "></span>
+                                         <?php }?>  
+                                    <?php 
+                                        $file=$v['path'];
+                                        $count=count(file($file));
+                                        $jilu=$v['jilu'];
+                                        $countLB=100-(round($jilu/($count+$jilu),2)*100);
+                                    ?> 
+                                    <em>剩余：<?php echo $countLB?>%</em>
+                                    <a href="<?php echo U('Lbxq/'.$v['id']);?>" target="_blank" class="qh">领取</a>
+                                </p>
+                            </div>
+                        </li>             
+            <?php }?>
+                   </ul>
+                        </div>
+                        <div class="page">
+                            <div class="gy_page fhpage">
+                                {$show}
+                               <!--  <span class="num">共：227条</span>&nbsp;&nbsp;&nbsp;<b>1</b>&nbsp;<a href="http://www.3733.com/listinfo-18-1.html">2</a>&nbsp;<a href="http://www.3733.com/listinfo-18-2.html">3</a>&nbsp;<a href="http://www.3733.com/listinfo-18-3.html">4</a>&nbsp;<a href="http://www.3733.com/listinfo-18-4.html">5</a>&nbsp;<a href="http://www.3733.com/listinfo-18-5.html">6</a>&nbsp;<a href="http://www.3733.com/listinfo-18-1.html">下一页</a>&nbsp;<a href="http://www.3733.com/listinfo-18-11.html">尾页</a> -->
+                                
+                            </div>					
+                        </div>
+                    </div>
+                </div>
+                <div class="main_rg">
+                    <div class="rmlb_list">
+                        <div class="wrap_tt"><span></span>热门礼包</div>
+                        <div class="listbox">
+                            <ul class="clearfix">
+            <?php foreach($Data['rementj'] as $k1=>$v1){
+                    $Game1=M('Gameinfo')->where("id=".$v1['gamename'])->find();
+                ?>
+                            <li>   
+                              <div class="prediv"><span><?php echo $v1['lbname']?></span>
+                                        <a href="<?php echo U('Lbxq/'.$v1['id']);?>" target="_blank">领取</a></div>
+                                    <div class="hoverdiv">
+                                        <div class="imgdiv"><a href="<?php echo U('Lbxq/'.$v1['id']);?>" target="_blank">
+                                                <img src="__PUBLIC__/Upload/Product/<?php echo $Game1['logo']?>" alt="<?php echo $v1['lbname']?>"></a></div>
+                                        <div class="txtdiv">
+                                            <p class="ptitle"><a href="_<?php echo U('Lbxq/'.$v1['id']);?>" target="_blank">
+                                            <?php echo $v1['lbname']?></a></p>
+                                         <?php 
+                                            $file=$v1['path'];
+                                            $count=count(file($file));
+                                            $jilu=$v1['jilu'];
+                                            $countLB=100-(round($jilu/($count+$jilu),2)*100);
+                                        ?> 
+                                            <p class="psl">剩余：<?php echo $countLB?>%<a href="<?php echo U('Lbxq/'.$v1['id']);?>" class="qh" target="_blank">领取</a></p>
+                                        </div>
+                                    </div>
+                                </li> 
+             <?php }?>                  
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+           
+            </div>
+
+        </div>
+ </block>   

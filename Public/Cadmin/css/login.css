@@ -1,0 +1,52 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+}
+#admin_header{
+    background: #00b38a;
+    width: 100%;
+    height: 200px;
+}
+#admin_header em{
+    font-size: 2em;
+    line-height: 200px;
+    /*text-align: center;*/
+}
+#signForm{
+    margin-top: 50px;
+    width:30%;
+}
+#sep{
+    width: 1px;
+    height: 170px;
+    background: #00b38a;
+    margin-top: 20px;
+    margin-right: 10px;
+    float: left;
+}
+/*#sepr{
+    width: 1px;
+    height: 170px;
+    background: #00b38a;
+    margin-top: 20px;
+    float: left;
+}*/
+#unote{
+    font-size: 15px;
+    color: red;
+    display: none;
+}
+#pnote{
+    font-size:15px;
+    color: red; 
+    display: none;
+}
+.ad_logo{
+    display:inline;
+    /*margin-top:20px;*/
+}
+.ad_logo img{
+    float: right ;
+    margin-top:20px;
+    margin-left: 100px;
+}

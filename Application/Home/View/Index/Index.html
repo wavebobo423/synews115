@@ -1,0 +1,428 @@
+<extend name="Public:main" />
+<block name="main">
+<meta name="baidu-site-verification" content="Y9gei2z6xH" />
+<script>(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?a50d44c60179352ea47c1cdf43d91fb4":"https://jspassport.ssl.qhimg.com/11.0.1.js?a50d44c60179352ea47c1cdf43d91fb4";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+<style>
+    body{
+      background:#f4f4f4;
+    }
+</style>
+ <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/Index/xp_new.css">
+ <script type="text/javascript" charset="utf-8"  src="__PUBLIC__/Home/js/xp_new.js"></script>
+ <script type="text/javascript" charset="utf-8"   src="__PUBLIC__/index.js">
+  
+</script>
+  <!--recommend:begin 这一块是新增的广告位2016-07-15-->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.tab_menu_l p').mouseover(function () {
+        var data = $(this).attr("data");
+        $('.tab_menu_l p').removeClass("hover");
+        $(this).addClass("hover");
+        $('.tab_menu_r').css("display", "none");
+        $('.tab_menu_r').eq(data).css("display", "block");
+      })
+
+      $("#floatTools").css('display',"none");
+    })
+  </script>
+  <div style=" width:1160px; margin:0 auto;">
+
+    <div class="fl">
+ <!--      // <script type="text/javascript" src="__PUBLIC__/Home/js/thea9.js"></script> -->
+    </div>
+    <div class="tab_menu">
+      <div class="tab_menu_l">
+        <p id="a1" class="hover" data="0"><span class="tb"></span><a href="#"><span class="txt">最新游戏</span></a><span class="jt"></span> </p>
+        <p id="a2" class="" data="1"><span class="tb tb2"></span><a href="#"><span class="txt">安卓游戏</span></a><span class="jt"></span> </p>
+        <p id="a3" style="border:none;" class="" data="2"><span class="tb tb3"></span><a href="#"> <span class="txt">IOS游戏</span></a> <span class="jt"></span> </p>
+      </div>
+      <div style="display: block;" id="a1a" class="tab_menu_r">
+        <div class="game_com_list">
+          <ul>
+          <?php for($i=0;$i<10;$i++){?>
+            <li class="on">            
+              <a href="<?php echo U('listseo/'.$Tuijian[$i]['seourl'])?>" title="<?php echo $Tuijian[$i]['gamename'];?>" target="_blank" rel="nofollow">              
+              <span class="mask72">              
+              </span>              
+              <img src="__PUBLIC__/Upload/Product/<?php echo $Tuijian[$i]['logo'];?>" alt="<?php echo $Tuijian[$i]['gamename'];?>">              
+              <span class="n-name"><?php echo $Tuijian[$i]['gamename'];?></span></a>            
+            </li>
+          <?php }?>
+         </ul>
+          <div class="line_box"><span class="line" style="left: 22px;"></span></div>
+        </div>
+        <div class="game_cd">
+        <?php for($i=10;$i<30;$i++){?>
+          <li><a href="<?php echo U('listseo/'.$Tuijian[$i]['seourl'])?>" title="<?php echo $Tuijian[$i]['gamename'];?>" target="_blank" rel="nofollow"><?php echo $Tuijian[$i]['gamename'];?></a></li>
+         <?php }?>
+        </div>
+      </div>
+      <div style="display: none;" id="a2a" class="tab_menu_r">
+        <div class="game_com_list">
+          <ul>
+           <?php for($i=0;$i<10;$i++){
+                  
+            ?>
+            <li>            
+            <a href="<?php echo U('listseo/'.$apkTuijian[$i]['seourl'])?>" title="<?php echo $apkTuijian[$i]['gamename'];?>" target="_blank" rel="nofollow">              
+              <span class="mask72">              
+              </span>              
+              <img src="__PUBLIC__/Upload/Product/<?php echo $apkTuijian[$i]['logo'];?>" alt="<?php echo $apkTuijian[$i]['gamename'];?>">              
+              <span class="n-name"><?php echo $apkTuijian[$i]['gamename'];?>              
+              </span></a>            
+            </li>
+         <?php  }?>
+
+         </ul>
+          <div class="line_box"><span class="line"></span></div>
+        </div>
+        <div class="game_cd">
+        <?php for($i=10;$i<30;$i++){?>
+          <li><a href="<?php echo U('listseo/'.$apkTuijian[$i]['seourl'])?>" title="<?php echo $apkTuijian[$i]['gamename'];?>" target="_blank" rel="nofollow"><?php echo $apkTuijian[$i]['gamename'];?></a></li>
+         <?php }?>
+        </div>
+      </div>
+      <div style="display: none;" id="a3a" class="tab_menu_r">
+        <div class="game_com_list">
+          <ul>
+            <?php 
+             
+                  foreach($iosTj as $kios=>$vios){
+                  // dump($vios);
+              ?>
+            <li class="on">            
+              <a href="<?php echo U('listseo/'.$vios['seourl'])?>" title="<?php echo $vios['gamename'];?>" target="_blank" rel="nofollow">              
+              <span class="mask72">              
+              </span>              
+              <img src="__PUBLIC__/Upload/Product/<?php echo $vios['logo'];?>" alt="<?php echo $vios['gamename'];?>">              
+              <span class="n-name"><?php echo $vios['gamename'];?></span></a>            
+            </li>
+          <?php } ?>
+
+            </ul>
+          <div class="line_box"><span class="line" style="left: 0px;"></span></div>
+        </div>
+        <div class="game_cd">
+           <?php for($i=10;$i<30;$i++){
+                 
+            ?>
+          <li><a href="<?php echo U('listseo/'.$iosTj[$i]['seourl'])?>" title="<?php echo $iosTj[$i]['gamename'];?>" target="_blank" rel="nofollow"><?php echo $iosTj[$i]['gamename'];?></a></li>
+         <?php }?>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rel content" id="nav-1">
+    <div class="main2">
+      <div class="Slide fl" id="slide">
+        <ul class="slide-cont">
+           <?php 
+
+            for($i=0;$i<10;$i++){
+
+                  if(!empty($Banner[$i]['adpictureurl'])){
+            ?>
+          <li class="slide-item" style="left: 0px;"> 
+          <a href="{:U('listseo/'.$Banner[$i]['seourl'])}" title="<?php echo $Banner[$i]['gamename'].$Banner[$i]['duction']?>" target="blank" rel="nofollow">
+             <img src="__PUBLIC__/Upload/Product/<?php echo $Banner[$i]['adpictureurl'] ?>" alt="<?php echo $Banner[$i]['gamename'].$Banner[$i]['duction']?>" width="610" height="320"> 
+          </a>
+            <div class="slide-txt">
+              <div class="txt_bg"></div>
+              <a href="{:U('listseo/'.$Banner[$i]['seourl'])}"  target="_blank" rel="nofollow"><?php echo $Banner[$i]['gamename'].$Banner[$i]['duction']?></a>
+            </div>
+          </li>
+           <?php } } ?>
+          
+                  </ul>
+        <div class="slide-nav">
+            <?php for($i=0;$i<6;$i++){
+                  if(!empty($Banner[$i]['adpictureurl'])){
+            ?>
+              <a href="javascript:" class="nownav" rel="nofollow"><?php echo $i;?></a>
+             <?php } } ?>
+        </div>
+        <div class="slide-loading" style="height: 5px; position: absolute; left: 0px; bottom: 0px; z-index: 10; width: 93.416%; overflow: hidden; background: rgb(255, 232, 37);"></div>
+
+      </div>
+      <div class="News_box">
+        <!--新闻大头条 -->
+        <div class="hd">
+          <div class="hd_tit">
+            <a href='{:U("Newslist/".$NewsTop[0]["id"])}' title="<?php echo $NewsTop[0]['title']?>" target="_blank" rel="nofollow">
+             <?php echo $NewsTop[0]['title']?>   
+           </a>
+          </div>
+          <div class="hd_art">
+            <p style="width:96%">
+               <?php echo trim(mb_substr($NewsTop[0]['intro'],0,120,'utf-8'));?>...... 
+              <a href='{:U("Newslist/".$NewsTop[0]["id"])}' target="_blank" rel="nofollow">[详细]</a>
+            </p>
+          </div>
+       </div>
+        <div class="bd">
+          <ul>
+            <!--新闻、评测小头条 -->
+            <?php  for($i=1;$i<=5;$i++){?>
+            <li> 
+              <span><?php echo date("m-d",$NewsTop[$i]['createtimenews']);?></span>
+                <a href='<?php echo U("Newslist/".$NewsTop[$i]["id"])?>' target="_blank" rel="nofollow"> <?php echo trim($NewsTop[$i]['title'])?></a>
+            </li>
+            <?php }?>
+                      
+           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="box2 mgt30" id="nav-2">
+      <div class="rel b-con-title">
+        <span class="abs">热门游戏</span>
+        <i class="abs ico-2 b-con-hot"></i>
+      </div>
+      <div class="mgt18 b2-hotgame-box">
+        <ul>
+          
+
+        <?php for($i=0;$i<3;$i++){?>
+          <li>
+            <p class="b2-hgimg-box">
+              <a href='<?php echo U("listseo/".$Remen[$i]["seourl"]);?>' target="_blank" rel="nofollow">
+                <img class="lazy" src="__PUBLIC__/Upload/Product/<?php echo $Remen[$i]['wapadpic']?>" alt="<?php echo $Remen[$i]['gamename']?>" style="display: inline;">
+              </a>
+            </p>
+            <div class="rel b2-hg-con">
+              <p class="b2-hg-title">
+               <?php echo $Remen[$i]['gamename']?>
+                <i class="b2-hg-stars stars-5"></i>
+               </p>
+              <a class="abs ico-btn ico-btn-ani b2-hg-gw" title="进入官网" target="_blank" href="<?php echo U("listseo/".$Remen[$i]["seourl"]);?>" rel="nofollow">进入官网</a>
+            </div>
+          </li>
+        <?php }?>
+         
+          
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="box3 mgt30" id="nav-3">
+      <div class="fl b3-l-box">
+        <div class="rel b-con-title">
+          <span class="abs">精品推荐</span>
+          <section>
+            <div class="hover itab" style="margin-left:150px;">BT版</div>
+            <div class="itab">满VIP版</div>
+            <!-- <div class="itab">GM版</div> -->
+          </section>
+          <i class="abs ico -2 b-con-gl"></i>
+          <a class="ico-2 abs" href="__MODULE__/Game" title="更多">更多</a>
+        </div>
+
+        <div class="b3-l-slidebox">
+          <ul class="tuijian">
+          <?php for($i=0;$i<9;$i++){?>
+              <li class="gamelength">
+              <a href="<?php echo U('listseo/'.$Jingping[$i]['seourl'])?>" target="_blank" rel="nofollow">
+                <img class="abs lazy b2-hg-ico" src="__PUBLIC__/Upload/Product/<?php echo $Jingping[$i]['logo']?>" style="display: block;" data="{:U()}">
+              </a>
+                <a href="<?php echo U('listseo/'.$Jingping[$i]['seourl'])?>" target="_blank" class="abs b2-hg-name" title="<?php echo $Jingping[$i]['gamename']?>" rel="nofollow">
+                 <?php echo $Jingping[$i]['gamename']?>
+               </a>
+                <p class="abs b2-hg-type">类型：
+                  <?php 
+                      $typeid=explode(',',$Jingping[$i]['label']);
+                      $gamelabel1=M('Gamelabel')->find($typeid[0]);
+                      $gamelabel2=M('Gamelabel')->find($typeid[1]);
+                      echo $gamelabel1['labelname']."&nbsp;".$gamelabel2['labelname'];
+                  ?>
+                 </p>
+                <a class="abs ico-btn ico-btn-ani b2-hg-down" href="{:U('listseo/'.$Jingping[$i]['seourl'])}" target="_blank" title="下载游戏" rel="nofollow">下载游戏</a>
+              </li>
+          <?php }?>
+         </ul>
+
+
+
+        </div>
+        <div class="b3-l-slidebox" style="display:none;">
+
+
+
+          <ul class="tuijian">
+                <?php 
+                    for($i=0;$i<count($Game);$i++){
+                        $typeid=explode(",",$Game[$i]['label']);
+
+                        if(in_array(19,$typeid)){
+                  ?>
+              <li class="gamelength">
+              <a href="{:U('listseo/'.$Game[$i]['seourl'])}" target="_blank" rel="nofollow">
+                <img class="abs lazy b2-hg-ico" src="__PUBLIC__/Upload/Product/<?php echo $Game[$i]['logo']?>" style="display: block;">
+              </a>
+                <a href="{:U('listseo/'.$Game[$i]['seourl'])}" target="_blank" class="abs b2-hg-name" title="<?php echo $Game[$i]['gamename']?>" rel="nofollow">
+                 <?php echo $Game[$i]['gamename']?>
+               </a>
+                <p class="abs b2-hg-type">类型：
+                  <?php 
+                      $typeid=explode(',',$Game[$i]['label']);
+                      $gamelabel1=M('Gamelabel')->find($typeid[0]);
+                      echo "<span style='color:red;'>满VIP</span> &nbsp;".$gamelabel2['labelname'];
+                  ?>
+                 </p>
+                <a class="abs ico-btn ico-btn-ani b2-hg-down" href="{:U('listseo/'.$Game[$i]['seourl'])}" target="_blank" title="下载游戏" rel="nofollow">下载游戏</a>
+              </li>
+          <?php } }?>                       
+            </ul>
+
+
+
+        </div>
+
+      </div>
+      <div class="fr b3-r-box">
+        <div class="rel b-con-title">
+          <span class="abs">热门活动</span>
+          <i class="abs ico-2 b-con-hd"></i>
+          <a class="ico-2 abs" href="__MODULE__/News" title="更多">更多</a>
+        </div>
+        <div class="b3-hdpic" data="{:U()}">
+          <ul>
+          <?php for($i=0;$i<4;$i++){?>
+            <li>
+              <a href="<?php echo U('Newslist/'.$HdTuijian[$i]['id'])?>" target="_blank" title="<?php echo $HdTuijian[$i]['title']?>" rel="nofollow">
+                     <img class="lazy" src="__PUBLIC__/Upload/huodong/<?php echo $HdTuijian[$i]['fm']?>" alt="<?php echo $HdTuijian[$i]['title']?>" style="display: inline;">
+                     </a>
+            </li>
+          <?php }?>            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="box4 mgt30" id="nav-4">
+      <div class="fl b4-slist-box">
+        <div class="rel b-con-title">
+          <span class="abs">开服列表</span>
+          <i class="abs ico-2 b-con-kflb"></i>
+          <a class="ico-2 abs" href="__MODULE__/Kaifu" rel="nofollow">更多</a>
+        </div>
+        <div class="b4-kf-box">
+          <script type="text/javascript" src="__PUBLIC__/Home/js/kftime.js"></script>
+
+          <p class="b4-kf-title"><span>游戏名称</span><i class="abs b4-kf-line1"></i><span>时间</span><i class="abs b4-kf-line2"></i><span>状态</span></p>
+          <ul class="b4-kf-list" id="kaifu_ajax">
+          <?php for($i=0;$i<8;$i++) {
+          ?>
+             <li>
+                 <span><class="name"><a target="_blank" href="__MODULE__/Index/Search/keyboard/<?php echo $Kaifu[$i]['gamename']?>" rel="nofollow"><?php echo $Kaifu[$i]['gamename']?></a></class="name"></span><span><?php echo date("m-d",$Kaifu[$i]['kfday'])."&nbsp;".date('H:i',$Kaifu[$i]['kdtime']);?></span><span><?php echo $Kaifu[$i]['server']?></span>
+            </li>
+          <?php }?>
+          </ul>
+        </div>
+      </div>
+      <div class="fl b4-xgame-box">
+        <div class="rel b-con-title">
+          <span class="abs">新游排行</span>
+          <i class="abs ico-2 b-con-xyph"></i>
+          <a class="ico-2 abs" href="__MODULE__/Game" title="更多" rel="nofollow">更多</a>
+        </div>
+        <div class="b4-xglist-box">
+          <ul class="b4-xf-list">
+            <?php $b=1; 
+
+                  for($i=0;$i<9;$i++){
+                            if(!empty($Tuijian[$i]['gamename'])){
+                              
+              ?>
+              <li>
+                <p class="rel b4-xfl1 hide">
+                  <i class="rank b4-rank-<?php echo $b;?>"></i>
+                  <span class="b4-rank-name"><?php echo $Tuijian[$i]['gamename']?></span>
+                  <a class="abs ico-btn ico-btn-ani b4-rank-down" href="{:U('listseo/'.$Tuijian[$i]['seourl'])}" target="_blank" title="下载游戏" rel="nofollow">下载游戏</a>
+                </p>
+                <div class="rel b4-xfl2 hide" style="display: none;">
+                  <i class="rank b4-rank-<?php echo $b;$b++?>"></i>
+                  <a href="{:U('listseo/'.$Tuijian[$i]['seourl'])}" target="_blank"><img class="abs lazy b4-rank-ico" src="__PUBLIC__/Upload/Product/<?php echo $Tuijian[$i]['logo']?>" alt="<?php echo $Tuijian[$i]['gamename']?>" style="display: block;" rel="nofollow"></a>
+                  <a class="abs b4-rank-name2" href="{:U('listseo/'.$Tuijian[$i]['seourl'])}" target="_blank" title="<?php echo $Tuijian[$i]['gamename']?>" rel="nofollow">
+                    <?php echo $Tuijian[$i]['gamename']?>
+                  </a>
+                  <p class="abs b4-rank-des">
+                  <?php echo trim($Tuijian[$i]['duction']);?>
+                  </p>
+                  <a class="abs ico-btn ico-btn-ani b4-rank-down" href="{:U('listseo/'.$Tuijian[$i]['seourl'])}" target="_blank" title="下载游戏" rel="nofollow">下载游戏</a>
+                </div>
+              </li>
+              <?php } }?>
+            
+            </ul>
+        </div>
+      </div>
+      <div class="fr b4-ggame-box">
+        <div class="rel b-con-title">
+          <span class="abs">热门礼包</span>
+          <i class="abs ico-2 b-con-yxlb"></i>
+          <a class="ico-2 abs" title="更多" href="__MODULE__/Lb" rel="nofollow">更多</a>
+        </div>
+        <!-- <div class="rel b4-tg-box">
+          <a href="#" target="_blank"><img src="__PUBLIC__/Home/img/5acd245d14d3f06143d5282575c5e185.png" border="0" width="428" height="138" alt=""></a>
+        </div> -->
+        <ul class="b4-tg-box2">
+          
+          <?php 
+
+              for($i=0;$i<9;$i++){
+                $game=M('Gameinfo')->field('id,logo')->find($Libao[$i]['gamename']);
+                if(!empty($Libao[$i]['gamename'])){
+            ?>
+            <li>
+            <a href="{:U('Lbname/'.$Libao[$i]['gamename'])}" target="_blank"><img class="abs lazy b4-tj-ico" src="__PUBLIC__/Upload/Product/<?php echo $game['logo']?>" alt="<?php echo $Libao[$i]['lbname']?>" style="display: block;" rel="nofollow"></a>
+            <a href="{:U('Lbname/'.$Libao[$i]['gamename'])}" target="_blank" class="abs b4-tj-name" title="<?php echo $Libao[$i]['lbname']?>"><?php echo trim($Libao[$i]['lbname']);?></a>
+           <p class="abs b4-tj-sdes">独家礼包</p>
+            <a href="{:U('Lbname/'.$Libao[$i]['gamename'])}" target="_blank" class="abs ico-btn ico-btn-ani b4-tj-sgg" rel="nofollow">领取礼包</a>
+          </li>
+                          
+          <?php } }?>                
+      </ul>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <div class="leftnav" style="right: 0px; position: fixed; top: 85px;">
+    <ul>
+      <li class=""><a class="nav-link nav-1" data-id="nav-1" href="javascript:;" title="新闻资讯"></a>
+        <p>新闻资讯</p>
+      </li>
+      <li class=""><a class="nav-link nav-2" data-id="nav-2" href="javascript:;" title="热门游戏"></a>
+        <p>热门游戏</p>
+      </li>
+      <li class="current"><a class="nav-link nav-3" data-id="nav-3" href="javascript:;" title="攻略活动"></a>
+        <p>攻略活动</p>
+      </li>
+      <li class=""><a class="nav-link nav-5" data-id="nav-5" href="javascript:;" title="游戏视频"></a>
+        <p>游戏视频</p>
+      </li>
+      <li><a class="nav-link nav-4" data-id="nav-4" href="javascript:;" title="新游礼包"></a>
+        <p>新游礼包</p>
+      </li>
+      <li><a class="nav-link nav-7" target="_blank" rel="nofollow" href="http://q.url.cn/s/hmS7PVm" title="客服中心"></a>
+        <p>客服中心</p>
+      </li>
+      <li class="nav-8-box"><a class="nav-8" href="javascript:;" title="3733游戏公众号"></a>
+        <div class="abs"></div>
+      </li>
+      <li><a class="nav-9" id="gotop" href="javascript:;" title="回到顶部"></a>
+        <p>回到顶部</p>
+      </li>
+    </ul>
+  </div> -->
+
+</block>

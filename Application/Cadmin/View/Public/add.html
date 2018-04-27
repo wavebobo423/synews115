@@ -1,0 +1,104 @@
+<extend name="Base/base" />
+<block name="body">
+    <style>
+        #pro_nav a button{
+            margin-left: 100px;
+        }
+        #pro_nav button a{
+
+        }
+    </style>
+    <!-- main content -->
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa icon-home"></i></a></li>
+        <li><a href="{:U('index')}">添加营收</a></li>
+        <li class="active">{$item['id']?'修改营收':'添加营收'}</li>
+    </ol>
+    <div class="headline">
+        <h3>{$item['id']?'修改营收':'添加营收'}</h3>
+    </div>
+    <p></p>
+    <hr>
+        <form   action="{:U($url)}" method="post"  enctype="multipart/form-data">
+            <input type="hidden" name="pro_id" value="{$item.id}">
+            <div class="row">
+                <div class="col-md-10">
+                     <div class="form-group">
+                        <label for="pro_name">月份</label>
+                        <input type="date" placeholder="礼包标题" name="week" id="pro_name" value="{$item.week}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">注册</label>
+                        <input placeholder="礼包标题" name="zhuce" id="pro_name" value="{$item.zhuce}" class="form-control" style="width:40%;">
+                    </div>
+                     <div class="form-group">
+                        <label for="pro_name">活跃</label>
+                        <input placeholder="礼包标题" name="huoyue" id="pro_name" value="{$item.huoyue}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">充值</label>
+                        <input placeholder="礼包标题" name="amount" id="pro_name" value="{$item.amount}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">广告费</label>
+                        <input placeholder="礼包标题" name="ggfei" id="pro_name" value="{$item.ggfei}" class="form-control" style="width:40%;">
+                    </div>
+                   <!--  <div class="form-group">
+                        <label for="pro_name">广告费</label>
+                        <input placeholder="礼包标题" name="huoyue" id="pro_name" value="{$item.amount}" class="form-control" style="width:40%;">
+                    </div> -->
+                   
+                   
+                
+            <button type="submit" class="btn btn-info" >提交</button>
+              <!-- <input type="submit" class="btn btn-info" value="提交"> -->
+
+    </div>
+     </div>
+  </form>
+</block>
+<block name="script">
+
+    <script type="text/javascript">
+        // alert($);
+        // $("#pro_game").blur(function(){
+        //     var name=$(this).val();
+        //     if(name!=""){
+        //         $.ajax({
+        //             type:"GET",
+        //             data:"name="+name,
+        //             url:"__MODULE__/News/getGame",
+        //             success:function(data){
+        //                 $("input[name='game']").val("");
+        //                 $("input[name='game']").val(data[0].id);
+        //                 $("#alink").empty();
+        //                 for(var i=0;i<data.length;i++){
+        //                     var alink="<a href='javascript:selectid("+data[i].id+");' data-name="+data[i].gamename+" id='selectida"+data[i].id+"' >"+data[i].gamename+"</a>&nbsp;";
+        //                     $("#alink").append(alink);
+        //                 }
+        //             }
+        //         });
+        //     }
+        // });
+
+
+        // function selectid(id){
+        //     var name=$("#selectida"+id).data('name');
+        //     $("input[name='game']").val(id);
+        //     $("#pro_game").val(name);
+        // }   
+    </script>
+
+
+     <link href="__PUBLIC__/Static/plugins/UE/themes/default/css/ueditor.css" rel="stylesheet">
+      <script src="__PUBLIC__/Static/plugins/UE/ueditor.config.js"></script>
+      <script src="__PUBLIC__/Static/plugins/UE/ueditor.all.js"></script>
+     <script>
+         var um = UE.getEditor("editor", {
+             initialFrameWidth: 'auto',
+             initialFrameHeight: 400,
+             autoHeightEnabled: true,
+             autoFloatEnabled: false,
+         })
+     </script>
+</block>

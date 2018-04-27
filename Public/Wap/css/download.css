@@ -1,0 +1,80 @@
+.download-bottom a {
+    border: 2px solid #3e4753;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 5px;
+    background-color: #3e4753;
+}
+.download-bottom .android {
+    background: url(../img/android.png) no-repeat #3e4753;
+    background-size: 12px;
+    background-position: 10px center;
+}
+.download-bottom .ios {
+    background: url(../img/ios.png) no-repeat #3e4753;
+    background-size: 12px;
+    background-position: 10px center;
+}
+.download-bottom a {
+    border: 2px solid #ff7a17;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 5px;
+    background-color: #3e4753;
+}
+.download-bottom .android {
+    background: url(../img/android.png) no-repeat #3e4753;
+    background-size: 12px;
+    background-position: 10px center;
+}
+.download-bottom .ios {
+    background: url(../img/ios.png) no-repeat #3e4753;
+    background-size: 12px;
+    background-position: 10px center;
+}
+.download-bottom .addqq{
+    background: url(../img/qq.png) no-repeat #ff7a17;
+    background-size: 30px;
+    background-position: 20% center;
+}
+.download-bottom .addqqqun{
+    background: url(../img/qqqun.png) no-repeat #ff7a17;
+    background-size: 30px;
+    background-position: 20% center;
+}
+．gamexx　.download-info{width:96%; overflow:hidden; margin:0 auto;}
+．gamexx　.download-info dt{width:71px; height:71px; overflow:hidden; float:left;margin-top:5px;}
+．gamexx　.download-info dt img{width:71px; height:71px;}
+．gamexx　.download-info dd{ margin-left:80px; overflow:hidden;}
+．gamexx　.download-info dd .fav{ float:right; display:block; width:20px; height:20px; background:url(../img/icon-download-fav.gif) no-repeat center;}
+．gamexx　.download-info dd strong{ display:block; padding-bottom:5px; font-size:18px; color:#484848; white-space:nowrap; word-break:break-all;}
+．gamexx　.download-info p{line-height:1.6em; font-size:13px; color:#525250;}
+.az_title {width: 96%;font-size: 0.75em;color: #666;margin: 10px auto;}
+.az_title a{color: #666;}
+.download-btn{width:96%; text-align:center; margin:0 auto; overflow:hidden;}
+.download-btn .p{width: 52%;margin:0 2px; display:inline-block; height:35px; line-height:35px; color:#fff; font-size:15px; background:#2FA52D }
+.download-btn .p2 {width: 90%;margin: 0 auto;display: inline-block;height: 35px;line-height: 35px;color: #fff;font-size: 15px;background: #1391f5;border-radius: 20px;}
+.download-btn .np2 {width: 90%;margin: 0 auto;display: inline-block;height: 35px;line-height: 35px;color: #fff;font-size: 15px;background: #9e9e9e;border-radius: 20px;}
+.download-btn .g{width: 25%;margin:0 2px; display:inline-block; height:39px; line-height:39px; color:#fff;  font-size:15px; background:#FF9000 url(../img/icon-download-g.gif) no-repeat 10px center;}
+.download-link{width:96%; overflow:hidden; margin:0 auto; text-align:center;}
+.download-link a{color:#2FA52D; margin:0 3px; text-decoration:underline;font-size: 16px;}
+.dl-chk{display:inline-block;height: 39px;line-height:39px;margin-left:10%}
+.dl-chk-img{width:5px;vertical-align: middle}
+.dl-chk-sp{display: inline-block;vertical-align: middle;margin:0 5px}
+.dl-chk-tip-n{background:url(../img/laba.png) no-repeat 20px center #eaecdd;color:#2fa52d;padding:10px;overflow: hidden;}
+.dl-chk-tip-n span{display: block;margin-left:0px;text-align: left}
+hr{
+    width: 80%;
+    position:relative;
+    left:70px;
+    top:-18px;
+    height: 1px;
+    background: lightgray;
+    border:none;
+}

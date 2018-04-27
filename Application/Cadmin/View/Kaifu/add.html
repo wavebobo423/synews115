@@ -1,0 +1,98 @@
+<extend name="Base/base" />
+<block name="body">
+    <style>
+        #pro_nav a button{
+            margin-left: 100px;
+        }
+        #pro_nav button a{
+
+        }
+    </style>
+    <!-- main content -->
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa icon-home"></i></a></li>
+        <li><a href="{:U('index')}">游戏列表</a></li>
+        <li class="active">{$item['id']?'修改开服':'添加开服'}</li>
+    </ol>
+    <div class="headline">
+        <h3>{$item['id']?'修改开服':'添加开服'}</h3>
+    </div>
+    <p></p>
+    <hr>
+        <form   action="{:U($url)}" method="post"   enctype="multipart/form-data">
+           
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="__PUBLIC__/Home/开服表示例文档.xls">下载开服表示例文档</a>
+                    <hr>
+                    <div class="form-group">
+                        <label for="pro_name">批量上传开服表(EXECL2003)</label>
+                        <input type="file" placeholder="开服标题" name="kaifu" id="pro_name"  class="form-control"  style="width:40%;">
+                    </div>
+                    <div>
+                                            
+                        <p>    新手必看               </p> 
+                        <p>  <span style="color:red;">禁止使用EXECL2007文件进行上传,必须创建97-2003</span></p> 
+                        <p>   游戏名称必须是已经添加过的游戏,否则失败!  </p>                         
+                        <p>    其他任何地方都不用填写，严格按照：<span style="color:red;">游戏名称,区服,开服日期,开服时间</span>
+                            这几个顺序排列,否则上传失败!
+                            具体对照上方开服表示例文档!
+                                                 </p>
+                       <p>日期跟时间这2个必须一样,必填写完整的年月日,时分</p>
+                       <p>     正确格式:2017/8/19 10:00 <span style="color:red;">注意:EXECL里日期与时间时间中间必须有1个空格</span></p>                           
+                        <p>    错误格式:2017/8/1910:00   </p>                         
+                        
+                    </div>
+      
+            <button type="submit" class="btn btn-info" >提交</button>
+
+
+    </div>
+     </div>
+  </form>
+</block>
+<block name="script">
+
+    <script type="text/javascript">
+        // alert($);
+        $("#pro_game").blur(function(){
+            var name=$(this).val();
+            if(name!=""){
+                $.ajax({
+                    type:"GET",
+                    data:"name="+name,
+                    url:"__MODULE__/News/getGame",
+                    success:function(data){
+                        $("input[name='game']").val("");
+                        $("input[name='game']").val(data[0].id);
+                        $("#alink").empty();
+                        for(var i=0;i<data.length;i++){
+                            var alink="<a href='javascript:selectid("+data[i].id+");' data-name="+data[i].gamename+" id='selectida"+data[i].id+"' >"+data[i].gamename+"</a>&nbsp;";
+                            $("#alink").append(alink);
+                        }
+                    }
+                });
+            }
+        });
+
+
+        function selectid(id){
+            var name=$("#selectida"+id).data('name');
+            $("input[name='game']").val(id);
+            $("#pro_game").val(name);
+        }   
+    </script>
+
+
+     <link href="__PUBLIC__/Static/plugins/UE/themes/default/css/ueditor.css" rel="stylesheet">
+      <script src="__PUBLIC__/Static/plugins/UE/ueditor.config.js"></script>
+      <script src="__PUBLIC__/Static/plugins/UE/ueditor.all.js"></script>
+     <script>
+         var um = UE.getEditor("editor", {
+             initialFrameWidth: 'auto',
+             initialFrameHeight: 400,
+             autoHeightEnabled: true,
+             autoFloatEnabled: false,
+         })
+     </script>
+</block>

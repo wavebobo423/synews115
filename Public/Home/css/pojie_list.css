@@ -1,0 +1,49 @@
+.rgt {
+    float: right;
+    display: inline;
+}
+.select{padding:15px 10px 10px 10px;border:#ddd 1px solid;font-size:14px; background:#FFF}
+.select li{list-style:none;padding:2px 0 2px 70px}
+.select .select-list{}
+.select dl{zoom:1;position:relative;line-height:24px;}
+.select dl:after{content:" ";display:block;clear:both;height:0;overflow:hidden}
+.select dt{width:80px;margin-bottom:5px;position:absolute;top:0;left:-80px;text-align:right;height:24px;line-height:24px}
+.select dd{float:left;display:inline;margin:0 0 5px 5px;}
+.select a{display:inline-block;white-space:nowrap;height:24px;padding:0 10px;}
+.select a:hover{color:#FFF;background-color:#17b1f2}
+.select .selected a{color:#fff;background-color:#17b1f2}
+.select-result dt{font-weight:bold}
+.select-no{color:#999}
+.zhushou_soft .title,.rk .t1{ background:url(../images/tbg.jpg) repeat-x; height:60px; overflow:hidden; margin-bottom:10px;line-height:68px; margin-top:10px}
+.zhushou_soft .title a,.rk .t1 a{ color:#FFF; font-size:18px; display:block; float:left; height:60px; text-align:center; padding:0px 20px}
+.zhushou_soft .title .cur,.rk .t1 .cur{ background:#41aff7; -moz-border-radius:5px 5px 0px 0px;  -webkit-border-radius:5px 5px 0px 0px;border-radius:5px 5px 0px 0px; }
+.zhushou_soft .title span,.rk .t1 span{ color:#ababab; font-size:14px; margin-right:20px; }
+.zhushou_soft .title i{ font-style:normal; color:#F00}
+.zhushou_soft .pic_box dl{ width:358px; height:168px; overflow:hidden; border:1px #dedede solid; float:left; margin-right:15px; padding:15px; background:#FFF; margin-bottom:15px}
+.zhushou_soft .pic_box dt{ line-height:24px; font-size:14px; color:#ababab}
+.zhushou_soft .pic_box dd{ height:100px; width:100%; overflow:hidden; margin-bottom:5px}
+.zhushou_soft .pic_box dd img{ width:100px; height:100px;-webkit-border-radius:15px;border-radius:15px; float:left}
+.zhushou_soft .pic_box dd .txt{ height:100px; overflow:hidden; width:210px}
+.zhushou_soft .pic_box dd .txt h3{ font-weight:normal; line-height:28px}
+.zhushou_soft .pic_box dd .txt p{ color:#ababab; font-size:14px; line-height:22px}
+.zhushou_soft .pic_box dd .txt p a{ border:1px #dedede solid; padding:5px 11px}
+.zhushou_soft .pic_box dd .txt p a:hover{ background:#41aff7; color:#FFF; border:none}
+/*分页*/
+/*.pages { font-size:14px; line-height:24px; width:100%; height:26px;margin:30px 0px 30px 0px}*/
+.pages {width:100%;height:26px;padding:20px 0;display:block; margin:20px auto 20px auto; padding:0px 0px 0px 0px;font-size: 16px;}
+.pages a { display:inline-block; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:5px 10px; }
+
+.pages a:hover,.pages .all { background:#555555; color:#FFF; text-decoration:none; }
+.pages span { display:inline-block; height:22px;padding: 5px 10px; line-height:22px; background:#555555; border:1px solid #e3e3e3; color:#fff; text-align:center; }
+.txtCtr {
+    text-align: center;
+}
+.pages b{
+    background: #555555;color: #FFF;
+        display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+    padding: 5px 10px;
+}

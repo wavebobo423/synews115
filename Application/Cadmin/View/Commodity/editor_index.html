@@ -1,0 +1,80 @@
+<extend name="Base/base"/>
+<block name="body">
+    <ul class="breadcrumb">
+        <li><a href="/"><i class="fa icon-home"></i></a></li>
+        <li>{$channelName}</li>
+    </ul>
+    <div class="headline">
+        <h2>{$channelName}</h2>
+    </div>
+    <p class="pull-left">
+
+        <a class="btn btn-info btn-sm" href="{:U('Commodity/addEditor')}" target="_blank"><i class="fa icon-plus-square"></i>添加小编</a>
+
+    </p>
+    <!--<form action="{:U('Company/find')}" method="get" class="navbar-form navbar-right" role="search">-->
+    <!--<div class="form-group">-->
+    <!--<label>Status</label>-->
+    <!--<select name="status" class="form-control">-->
+    <!--<option value="">Choose</option>-->
+    <!--<option value="2" <if condition="$status eq 2">selected</if>>Pending</option>-->
+    <!--<option value="1" <if condition="$status eq 1">selected</if>>Enable</option>-->
+    <!--</select>-->
+    <!--</div>-->
+    <!--<input type="text" name="name" class="form-control" placeholder="Name" value='{$name}'>-->
+    <!--<input type="text" name="id" class="form-control" placeholder="ID" value='<if condition="$mid gt 0">{$mid}</if>'>-->
+    <!--<button type="submit" class="btn btn-primary" id="search">搜索</button>-->
+    <!--</form>-->
+    <table class="table table-bordered table-striped" style="text-align:center">
+        <tr >
+            <th style="text-align:center">编辑ID</th>
+            <th style="text-align:center">编辑名字</th>
+            <th style="text-align:center">编辑头像</th>
+            <th style="width: 265px;text-align:center">操作</th>
+        </tr>
+        <volist name="items" id="item">
+            <tr>
+                <td >{$item.editor_id}</td>
+                <td>{$item.editor_name}</a></td>
+                <td><img src="__ROOT__{$item.editor_icon}" width="100px" height="100px"></td>
+                <td class="options">
+                    <a href="javascript:;" class="del" data-id="{$item.editor_id}"><button class="btn btn-danger btn-success confirm ajax-partner" status="1"><i class="fa icon-trash icon-trash"></i> 删除</button></a>
+                    <a href="{:U('Commodity/editEditor')}?id={$item.editor_id}"><button class="btn btn-info btn-success confirm ajax-partner" status="1"><i class="fa icon-trash icon-edit"></i> 编辑</button></a>
+                </td>
+            </tr>
+        </volist>
+    </table>
+    <center>
+        {$pagination}
+    </center>
+</block>
+<block name="script">
+    <script>
+        // 判断锁定
+
+        $('.del').click(function(){
+            var that = $(this);
+            var id = $(this).data("id");
+            if ($(this).hasClass('confirm')) {
+                if (!confirm('你确定要删除吗?')) {
+                    return false;
+                }
+            }
+            $.ajax({
+                url: "{:U('del')}",
+                type: 'post',
+                data: {
+                    'id': id,
+                    'type':2
+                },
+                dataType:"json",
+                success: function(data) {
+                    if(data.status){
+                        alert("删除成功");
+                        that.parents("tr").remove();
+                    }
+                }
+            });
+        });
+    </script>
+</block>

@@ -1,0 +1,72 @@
+<extend name="Base/base"/>
+<block name="body">
+    <ul class="breadcrumb">
+        <li><a href="{:U('Public/show')}"><i class="fa icon-home"></i></a></li>
+        <li>{$channelName}</li>
+    </ul>
+    <div class="headline">
+        <h2><a href="{:U('Comment/index')}">{$channelName}</a></h2>
+    </div>
+    <!-- <p class="pull-left">
+        <a class="btn btn-info btn-sm" href="{:U('Video/addVideo')}" target="_blank"><i class="fa icon-plus-square"></i>添加Video</a>
+    </p> -->
+    <form action="__SELF__" method="get" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <label>分类:</label>
+            <select name="type" class="form-control">
+                <option value=" " <empty name="type">selected</empty>>--请选择--</option>
+                <option value="0" <if condition="$status eq 0">selected</if>>待审核</option>
+                <option value="1" <if condition="$status eq 1">selected</if>>已通过</option>
+            </select>
+        </div>
+        <input type="text" name="comment" class="form-control" placeholder="评论内容" value="{$comment}">
+        <button type="submit" class="btn btn-primary" id="search">搜索</button>
+    </form>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>留言内容</th>
+            <th>所属板块</th>
+            <th>评论时间</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        <volist name="items" id="item"> 
+          <foreach name="item" item="ob">
+            <tr>
+                <td class="id">{$ob.id}</td>
+                <td>{$ob.username}</td>
+                <td>{$ob.content}</td>
+                <td>
+                    <if condition="$ob.cate eq 1">
+                            当季鲜果
+                    <elseif condition="$ob.cate eq 2" />
+                            料理之味
+                    <elseif condition="$ob.cate eq 3" />
+                            镇店之宝
+                    <elseif condition="$ob.cate eq 4" />
+                            粮油调味
+                    <else />
+                            滋补养生
+                    </if>
+                </td>
+                <td>{$ob.ctime}</td>
+                <td><if condition="$ob.status eq 0">待审核<else />已通过</if></td>
+                <td class="options">
+                    <if condition="$ob.status eq 0">
+                        <a class="btn btn-sm btn-danger" href="{:U('checkComment', array('id' => $ob['id'],'status'=>1))}" ><i class="fa icon-trash"></i>&nbsp;通过</a>
+                         <a href="{:U('commentDel', array('id' => $ob['id'],'status'=>0))}" class="btn btn-sm btn-danger">删除</a>
+                    <else />
+                        <a class="btn btn-sm btn-info" href="{:U('checkComment', array('id' => $ob['id'],'status'=>0))}" ><i class="fa icon-edit"></i>&nbsp;下线</a>
+                         <a href="{:U('commentDel', array('id' => $ob['id'],'status'=>0))}" class="btn btn-sm btn-danger">删除</a>
+                    </if>
+                </td>
+            </tr>
+            </foreach>
+        </volist>
+    </table>
+    <center>
+        {$items.pagination}
+    </center>
+</block>

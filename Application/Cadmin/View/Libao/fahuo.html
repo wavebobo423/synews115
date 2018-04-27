@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鲜儿意见团购发货单</title>
+</head>
+ <link rel="stylesheet" href="__PUBLIC__/Home/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__JS__/font-awesome/css/font-awesome.min.css">
+    <!-- CSS Theme -->
+    <!-- <link rel="stylesheet" href="__STATIC__/css/style.css"> -->
+    <script src="__JS__/jquery-1.12.3.min.js"></script>
+    <script src="__JS__/metisMenu/metisMenu.min.js"></script>
+    <link rel="stylesheet" href="__JS__/metisMenu/metisMenu.min.css"/>
+    <!-- <link rel="stylesheet" href="__STATIC__/plugins/webuploader/webuploader.css"/> -->
+    <!-- CSS custom -->
+    <link rel="stylesheet" href="__CSS__/layout.css">
+    <link rel="stylesheet" href="__CSS__/bootstrap-reset.css">
+    <link rel="stylesheet" href="__CSS__/custom.css">
+    <!-- /底部 -->
+    <!-- [if lt IE 9]> -->
+    
+    <!--[endif]-->
+    <script src="__PUBLIC__/Home/bootstrap/js/bootstrap.min.js"></script>
+<body>
+    <form action="__MODULE__/Order/fahuo" method="post" id="form1" onsubmit="return fun()">
+        <table width="500" border="1" align="center" class="table-bordered">
+            <input type="hidden" name="uid" value="{$data['uid']}">
+            <input type="hidden" name="id" value="{$data['id']}">
+                <tr align="center">
+                    <th></th>
+                      <th width="200" colspan="2" align="center">收货人信息</th>
+                </tr>
+                <tr>
+                    <td align="center">序号:</td>
+                    <td colspan="2">{$data['id']}</td>
+
+                </tr>
+                <tr>
+                    <td align="center">订单编号:</td>
+                    <td colspan="2">{$data['order_id']}</td>
+                </tr>
+                <tr>
+                    <td align="center">下单时间:</td>
+                    <td colspan="2">{$data['ctime']}</td>
+
+                </tr>
+                <tr>
+                    <td width="100" align="center">商品名称:</td>
+                    <td width="100" align="left" colspan="2">{$data['pro_name']}</td>
+                </tr>
+                <tr>
+                    <td align="center">批量支付总数:</td>
+                    <td colspan="2"><?php echo count($order);?>/单</td>
+                </tr>
+                <tr>
+                    <td align="center">规格:</td>
+                    <td colspan="2">{$data['spename1']}</td>
+                </tr>
+                <tr>
+                    <td width="100" align="center">数量:</td>
+                    <td width="100" align="left" colspan="2">{$data['countnumber']}</td>
+                </tr>
+                <tr>
+                    <td width="100" align="center">单价:</td>
+                    <td width="100" align="left" colspan="2">{$data['spepri1']}/元</td>
+                </tr>
+                <tr>
+                    <td align="center">批量支付序号:</td>
+                    <td colspan="2">
+                        <?php for($i=0;$i<count($order);$i++){
+                                    echo $order[$i]['id']."/";
+                        }?>
+                        <span style="color:red;font-size:12px;">(注:为全部订单序号,包括普通订单和团购订单!)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100" align="center">支付总金额:</td>
+                    <td width="100" align="left" colspan="2">{$data['price']}/元</td>
+                </tr>
+               
+                
+                <tr>
+                    <td width="100" align="center">收货人</td>
+                    <td width="100" align="left" colspan="2">{$data['uname']}</td>
+                </tr>
+                <tr>
+                    <td width="100" align="center">手机</td>
+                    <td width="100" align="left" colspan="2">{$data['phone']}</td>
+                </tr>
+                 <tr>
+                    <td width="100" align="center">收货地址:</td>
+                    <td width="100" align="left" colspan="2">{$data['ress']}{$data['resscount']}</td>
+                </tr>
+                 <tr>
+                    <td width="100" align="center">用户备注:</td>
+                    <td width="100" align="left" colspan="2"><textarea class="form-control" rows="3"  disabled="true">{$data['u_content']}</textarea></td>
+                </tr>
+                <tr>
+                    <td width="100" align="center">快递名称:</td>
+                    <td width="100" align="left" colspan="2"><input type="text"  class="form-control" name="exname" value="{$data['ugername']}"></td>
+                </tr>
+                <tr>
+                    <td width="100" align="center">快递单号:</td>
+                    <td width="100" align="left" colspan="2"><input type="number"  class="form-control" name="exnumber" value="{$data['courier']}"></td>
+                </tr>
+                 <tr>
+                    <td width="100" align="center">&nbsp;</td>
+                    <td width="100" align="left" colspan="2"><button type="submit" class="btn btn-info">确认发货</button></td>
+                </tr>
+        </table>
+    </form>
+    <script>
+    function fun(){
+        uname=$.trim($("input[name='exname']").val());
+        number=$.trim($("input[name='exnumber']").val());
+        if(uname!=""&&number!=""){
+            return true;
+        }else{
+            alert("不能为空!");
+            return false;
+        }
+    }
+    $(function(){
+        //获取订单编号
+        dname=$("input[name='exnumber']").val();
+        //获取快递名称
+        kname=$("input[name='exname']").val();
+        if((dname!=""&&kname!="")){
+            $(".btn").attr("disabled",true);
+        }else{
+            $(".btn").removeAttr("disabled");
+        }
+    });
+
+    </script>
+</body>
+</html>

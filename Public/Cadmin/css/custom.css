@@ -1,0 +1,26 @@
+.control-label .required {
+    color: #e02222;
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.options .btn {
+    padding: 3px 5px;
+}
+.options .fa {
+    margin-right: 3px;
+}
+
+
+#footer {
+    padding-top: 5px;
+}
+
+#sidebar ul li {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#sidebar .nav-second-level li,
+#sidebar .nav-third-level li {
+    border-bottom: 0!important;
+}

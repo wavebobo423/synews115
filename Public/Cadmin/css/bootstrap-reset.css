@@ -1,0 +1,30 @@
+.headline {
+    display: block;
+    margin: 10px 0 25px 0;
+    border-bottom: 1px dotted #e4e9f0;
+}
+
+.headline h2,
+.headline h3,
+.headline h4 {
+    color: #585f69;
+    margin: 0 0 -2px 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: 2px solid #72c02c;
+}
+
+
+.breadcrumb > li + li:before {
+    content: "\f105 ";
+    font-family: FontAwesome;
+    color: #5f6d7b;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 5px;
+}
+
+.list-separate > li + li {
+    border-left: 1px dotted #e4e9f0;
+}

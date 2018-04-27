@@ -1,0 +1,87 @@
+<div class="h5_head">
+    <?php echo BDTONGJI; ?>
+    <div class="general">
+      <p style="color:#646464;"><?php echo WEB_PCHEADERTITLE;?>
+      </p>
+      <!-- <span> -->
+          <!-- <a target="_blank" href="#">手机版</a> -->
+          
+    </div>
+    <!-- 注册弹窗 -->
+    <script type="text/javascript" src="__PUBLIC__/Home/js/pc_login_register.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Home/js/validate_function.js"></script>
+
+
+  </div>
+  <!--logo-->
+<div class="h5_logo_bg">
+    <div class="general">
+        <div class="h5_logo">
+            <div class="logo_left"><a href=""><img src="<?php echo substr(WEB_LOGO,1);?>" width="242" height="80"></a>
+                  <span>我们只做变态服</span> 
+            </div>
+            <div class="h5_search">
+                <form action="__MODULE__/Searchpost" onsubmit="var v = $(&#39;#search_keyword_input&#39;).val();
+                        v = v.replace(/(^s*)|(s*$)/g, &#39;&#39;);
+                        if (!v) {
+                            alert(&#39;请输入游戏名称&#39;);
+                            return false
+                        }
+                        ;" method="post">
+                    <input id="search_keyword_input" name="keyboard" type="text" class="h5_text" placeholder="输入游戏名称" value="">
+                    <!-- <input type="hidden" name="show" value="title,keyboard">	 -->
+                   <!--  <input type="hidden" name="tempid" value="3">	
+                    <input type="hidden" name="classid" value="1,43,49"> -->
+                    <input type="submit" class="h5_bt" value="">
+                </form>
+           <p style="clear: both;margin-top: 42px;display: block;white-space: nowrap;"><span style="color:#f60;font-size:14px;"> &nbsp;热门搜索：</span> 
+                                <?php foreach($keys as $key=>$val){?>
+                                  <a href="<?php echo U("listseo/".$val['seourl']);?>" title="<?php echo $val['gamename'];?>" target="_blank"><?php echo $val['gamename'];?></a>
+                                <?php }?> 
+                           </p>
+            </div>
+            <div class="logo_right">
+                <span><a target="_blank" href="http://www.sy115.com/Public/115.apk"><?php echo WEB_NAME?>盒子</a></span>
+                <p><a href="javascript:;">微信公众号</a><em style="display: none;"><!--<i></i>--><img src="<?php echo substr(WEB_WX,1);?>"></em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // var display=$("#t_home").data('display');
+    // if(display!=1){
+    //     $("#t_home").removeClass("curr");
+    // }
+    
+
+</script>
+
+<!--导航-->
+ <div class="nav" style="clear:both;">         
+      <ul>       
+        <li id="t_home1" <?php echo $display==1?'class="curr"':'';?>     >          
+          <a href="__APP__/Index" title="网游首页">首页</a>        
+        </li>             
+        <li id="t_game" <?php echo $display==2?'class="curr"':'';?>>          
+          <a href="__APP__/Game/Index" title="游戏中心">游戏中心<span class="navIcon">            
+            </span></a>        
+        </li>           
+        <li id="t_time" <?php echo $display==4?'class="curr"':'';?>>          
+          <a href="__APP__/Kaifu" title="开服表">开服表</a>        
+        </li>             
+        <li id="t_top" <?php echo $display==5?'class="curr"':'';?>>          
+          <a href="__APP__/Top" title="排行榜" >排行榜</a>        
+        </li>             
+        <li id="t_card" <?php echo $display==6?'class="curr"':'';?>>        
+        <a href="__MODULE__/Lb/Index" title="礼包中心" >礼包中心</a>        
+        </li>             
+        <li id="t_news" <?php echo $display==7?'class="curr"':'';?>>          
+          <a href="__MODULE__/News/Index" title="资讯">资讯</a>        
+        </li>             
+          
+        <li id="t_kefu" <?php echo $display==8?'class="curr"':'';?>>        
+        <a href="__APP__/Kf" title="客服中心" >客服中心</a>        
+        </li>         
+      </ul>    
+    </div>   

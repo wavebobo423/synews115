@@ -1,0 +1,187 @@
+.banner {
+    height: 326px;
+    width: 100%;
+    background: url(../../img/banner_3.png) center no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner__cloud, .banner__house, .banner__people, .banner__text {
+    position: absolute;
+}
+.l-relative {
+    position: relative;
+}
+.l-wrap {
+    width: 1010px;
+    margin: 0 auto;
+}
+.l-wrap:before {
+    content: "\200B";
+    height: 0;
+    clear: both;
+    display: block;
+}
+
+.banner__text {
+    top: 96px;
+    left: 11px;
+    z-index: 101;
+}
+.l-wrap:after {
+    content: "\200B";
+    height: 0;
+    clear: both;
+    display: block;
+}
+.dialog {
+    -webkit-box-shadow: 0 0 38px #D0D0D0;
+    box-shadow: 0 0 38px #D0D0D0;
+    display: none;
+    z-index: 10001;
+    width: 432px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -216px;
+    margin-top: -100px;
+}
+.wrap_w {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#NIE-copyRight a{text-decoration: none;}#NIE-copyRight a:hover{text-decoration: underline;}
+
+.wrap_w {
+    background: white;
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+		.ctact {
+    margin: 20px 0 30px 0;
+}
+.ctact h3 {
+    font-size: 28px;
+	font-weight: normal;
+}
+
+.service .ctact .fg {
+    border: 1px solid #ececec;
+    padding: 20px 30px;
+    margin-top: 20px;
+    height: 68px;
+        zoom: 1;
+}
+.service .ctact .fg-1 {
+    background: url(../../img/bt-ico2.jpg) no-repeat 0 0;
+    background-size: 65px auto;
+}
+.service .ctact dl {
+    float: left;
+    width: 33.3%;
+    box-sizing: border-box;
+    padding: 0 0 0 70px;
+    height: 67px;
+}
+.service .ctact .fg-1 dt {
+    font-size: 18px;
+    font-weight: bold;
+}
+.ctact dt {
+    margin-bottom: 9px;
+}
+.service .ctact dd {
+    color: #b4b7ae;
+    line-height: 1.3;
+    font-size: 14px;
+}
+.service .ctact .fg-2 {
+    background: url(../../img/bt-ico1.jpg) no-repeat 0 0;
+    background-size: 65px auto;
+}
+.service .ctact .fg-3 {
+    background: url(../../img/weixin.jpg) no-repeat 0 0;
+    background-size: 65px auto;
+}
+.service .ctact .fg-3 dt {
+    font-size: 18px;
+    font-weight: bold;
+}
+.launchBtn {
+    height: 22px;
+    background-repeat: no-repeat;
+    text-indent: 15px;
+    line-height: 22px;
+    cursor: pointer;
+
+}
+
+.service .normal {
+    margin-top: 20px;
+}
+.service h3 {
+    font-size: 28px;
+}
+a {
+    color: #333333;
+    text-decoration: none;
+}
+.service .normal-con {
+    margin: 20px 0 0 0;
+    border: 1px solid #ececec;
+    border-right: none;
+    border-bottom: none;
+}
+.clearfix {
+    zoom: 1;
+}
+.service .normal-con .con1 {
+    background: url(../../img/ser-ico1.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con2 {
+    background: url(../../img/ser-ico2.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con3 {
+    background: url(../../img/ser-ico3.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con4 {
+    background: url(../../img/ser-ico4.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con5 {
+    background: url(../../img/ser-ico5.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con6 {
+    background: url(../../img/ser-ico6.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con7 {
+    background: url(../../img/ser-ico7.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con8 {
+    background: url(../../img/ser-ico8.jpg) no-repeat 20px 20px;
+}
+.service .normal-con .con9 {
+    background: url(../../img/ser-ico9.jpg) no-repeat 20px 20px;
+}
+.service .normal-con dl {
+    float: left;
+    width: 233px;
+    height: 100px;
+    padding: 30px 35px 0 130px;
+    border: 1px solid #ececec;
+    border-left: none;
+    border-top: none;
+}
+.service .normal-con dl dt {
+    font-size: 18px;
+    margin-bottom: 9px;
+    font-weight: bold;
+}
+.service .normal-con dl dd {
+    color: #777;
+    line-height: 1.3;
+    font-size: 14px;
+}

@@ -1,0 +1,247 @@
+<extend name="Base/base"/>
+<block name="body">
+    <ul class="breadcrumb">
+        <li><a href="/"><i class="fa icon-home"></i></a></li>
+        <li>{$channelName}</li>
+    </ul>
+    <div class="headline">
+        <h2>{$channelName}</h2>
+    </div>
+    <p class="pull-left">
+        <ul class="nav nav-tabs">
+            <li class="<?php if($_GET['type']==4){echo 'active';}?>"><a href="{:U('News/Add')}">+发布新闻</a></li>
+<!--             <li class="<?php if($_GET['type']==1){echo 'active';}?>" ><a href="{:U('Order/index',array('type'=>1))}">已审核</a></li>
+            <li class="<?php if($_GET['type']==2){echo 'active';}?>"  ><a href="{:U('Order/index',array('type'=>2))}">未审核</a></li> -->
+           <!--  <li class="<?php if($_GET['type']==3){echo 'active';}?>" ><a href="{:U('Order/index',array('type'=>3))}">下架</a></li> -->
+        </ul>
+    </p>
+    <form action="{:U('Index')}" method="post" class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <label for="order">新闻标题:</label>
+            <input type="text" name="title" id="order">
+        </div>
+        <button type="submit" class="btn btn-primary" id="search">搜索</button>
+    </form>
+    <table class="table table-bordered table-striped" style="text-align:center;">
+        <tr >
+            <th style="text-align:center;">选择</th>
+            <th style="text-align:center;">标题</th>
+            <th style="text-align:center;">类别</th>
+            <th style="text-align:center;">浏览量</th>
+            <th style="text-align:center;">发布时间</th>
+            <th style="text-align:center;">推荐</th>
+            <th style="text-align:center;">审核</th>
+            <th style="text-align:center">操作</th>
+        </tr>
+
+            <?php foreach ($items as $key => $value) {
+               
+            ?>
+                <tr>
+                    <td><input type="checkbox" value="<?php echo $value['id']?>"></td>
+                    <td><?php echo substr($value['title'],0);?>...</td>
+                    <td>
+                        <?php 
+                            // dump($value['id']);die;
+                            foreach ($Platform as $kp => $kv) {
+                               if($value['newslabel']==$kv['newlabelid']){
+                                    echo $kv['newlabelname'];
+                               }
+                            }
+                        ?>
+                    </td>
+                    <td><?php echo $value['clicknumber']?></td>
+                    <td><?php echo date('Y-m-d H:i:s',$value['createtimenews']);?></td>
+                    
+                    <td><?php 
+                            if($value['istj']==1){
+                                echo "是";
+                            }else{
+                                echo "否";
+                            }
+                    ?></td>
+                    <td><?php 
+                            if($value['status']==1){
+                                echo "是";
+                            }else{
+                                echo "否";
+                            }
+                    ?></td>
+                   
+                    <td>
+                        <a href="__MODULE__/News/UpdateNews/id/<?php echo $value['id']?>">编辑</a>
+                        <a href="__MODULE__/News/DeleteNews/id/<?php echo $value['id']?>">删除</a>
+                    </td>
+                </tr>
+          <?php }?>
+
+
+    </table>
+    <center>
+    {$pagination}
+    </center>
+    <section>
+      <button onclick="checked(1)" class="link_btn">全选</button>
+      <button onclick="checked(3)" class="link_btn">反选</button>
+      <button onclick="checked(2)" class="link_btn">取消</button>
+      <button onclick="chedel()" class="link_btn">批量删除</button>
+      <button onclick="tuijian()" class="link_btn">推荐</button>
+      <button onclick="qxtuijian()" class="link_btn">取消推荐</button>
+      <button onclick="shenhe()" class="link_btn">审核</button>
+      <button onclick="xiajia()" class="link_btn">下架</button>
+      <button onclick="newtime()" class="link_btn">设为最新</button>
+   </section>
+</block>
+<block name="script">
+    <script>
+
+     function chedel(){
+        //获取选中的文本
+        var box=$("input:checked");
+        id=new Array();
+        if(confirm("确定要删除选中的吗？")){
+             box.each(function(i){
+             id[i]=$(this).val();
+
+        });
+        window.location.href="__MODULE__/News/DeleteNews/id/"+id;
+      }
+   }
+      function tuijian(){
+        //获取选中的文本
+        var box=$("input:checked");
+        id=new Array();
+      
+        box.each(function(i){
+             id[i]=$(this).val();
+
+        });
+        window.location.href="__MODULE__/News/Tuijian/id/"+id;
+      
+
+     }
+
+      function shenhe(){
+        //获取选中的文本
+        var box=$("input:checked");
+        id=new Array();
+      
+        box.each(function(i){
+             id[i]=$(this).val();
+
+        });
+        window.location.href="__MODULE__/News/Shenhe/id/"+id;
+      
+
+     }
+
+     function xiajia(){
+        //获取选中的文本
+        var box=$("input:checked");
+        id=new Array();
+      
+        box.each(function(i){
+             id[i]=$(this).val();
+
+        });
+        window.location.href="__MODULE__/News/Xiajia/id/"+id;
+      
+
+     }
+
+      function newtime(){
+        //获取选中的文本
+        var box=$("input:checked");
+        id=new Array();
+      
+        box.each(function(i){
+             id[i]=$(this).val();
+
+        });
+        window.location.href="__MODULE__/News/Newtime/id/"+id;
+      
+
+     }
+
+
+       function qxtuijian(){
+         //获取选中的文本
+        var box=$("input:checked");
+        id=new Array();
+      
+        box.each(function(i){
+             id[i]=$(this).val();
+
+        });
+        window.location.href="__MODULE__/News/QXtuijian/id/"+id;   
+       }
+     function checked(a){
+                    //获取input的checkbox
+                    var input=document.getElementsByTagName("input");
+                       for(i=0;i<input.length;i++){
+                        //判断inputid的类型是否跟checkbox
+                        //多选按钮一致，增强代码的严密性
+                        if(input[i].type=="checkbox"){
+                            //使用switch语句获取点击穿过来相应的值，使其产生相对的变化
+                        switch(a){
+                            case 1:
+                                input[i].checked=!input[i].checked;
+                            break;
+                            case 2:
+                                input[i].checked=false;
+                            break;
+                            case 3:
+                               input[i].checked=!input[i].checked;
+                            break;
+                            }
+                        }
+                      }
+                    }
+         // function opendiv(id){
+         //     window.open ('__MODULE__/Order/fahuo/id/'+id, 'newwindow', 'width=750,height=565,top=80,left=80,top=200,left=400, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no') 
+         // }
+    // 判断锁定
+        // $('.ajax-partner').click(function(){
+        //     var that = this;
+        //     var id = $(this).parent().siblings('.id').text();
+        //     var status = $(this).attr('status');
+        //     if ($(this).hasClass('confirm')) {
+        //         if (!confirm('Are you sure you want to do this?')) {
+        //             return false;
+        //         }
+        //     }
+        //     $.ajax({
+        //         url: "{:U('updatePartner')}",
+        //         type: 'post',
+        //         data: {
+        //             'id': id,
+        //             'status': status
+        //         },
+        //         success: function(data) {
+        //             $(that).attr('disabled', 'disabled')
+        //         }
+        //     });
+        // });
+        // $('.ajax-status').click(function(){
+        //     var that = this;
+        //     var id = $(this).parent().siblings('.id').text();
+        //     var status = $(this).attr('status');
+        //     if ($(this).hasClass('confirm')) {
+        //         if (!confirm('Are you sure you want to do this?')) {
+        //             return false;
+        //         }
+        //     }
+        //     $.ajax({
+        //         url: "{:U('updateStatus')}",
+        //         type: 'post',
+        //         data: {
+        //             'id': id,
+        //             'status': status
+        //         },
+        //         success: function(data) {
+        //             $(that).attr('disabled', 'disabled')
+        //         }
+        //     });
+        // });
+    </script>
+</block>

@@ -1,0 +1,273 @@
+<extend name="Base/base" />
+<block name="body">
+    <div><h2 style="color:#00b38a;text-align:center;">2017年月营收明细</h2></div>
+    <div>
+        <a href="__MODULE__/Public/add">添加营收</a>
+    </div>
+    <!-- <link href="__PUBLIC__/echarts/asset/css/echartsHome.css" rel="stylesheet"> -->
+   <div id="main" style="height:400px"></div>
+  <?php foreach($data as $key=>$val){?>
+    <input type="hidden" class="datemonth" value="<?php echo date("m",$val['week']);?>/月">
+    <input type="hidden" class="datazhuce" value="<?php  echo $val['zhuce'];?>">
+    <input type="hidden" class="datahuoyue" value="<?php  echo $val['huoyue'];?>">
+    <input type="hidden" class="dataamount" value="<?php echo  $val['amount'];?>">
+    <input type="hidden" class="dataggfei" value="<?php echo  $val['ggfei'];?>">
+    <input type="hidden" class="datachunshouru" value="<?php echo ($val['amount']/2)-$val['ggfei']?>">
+  <?php }?>
+<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+</block>
+<block name="script">
+
+<script type="text/javascript">
+        // 路径配置
+        // require.config({
+        //     paths: {
+        //         echarts: 'http://echarts.baidu.com/build/dist'
+        //     }
+        // });
+         // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(document.getElementById('main')); 
+        var gnamename=new Array();
+        $(".datemonth").each(function(i){
+                gnamename[i]=$(this).val();
+        });
+        var zhuce=new Array();
+        $(".datazhuce").each(function(i){
+               zhuce[i]=$(this).val();
+        });
+
+        var datahuoyue=new Array();
+        $(".datahuoyue").each(function(i){
+               datahuoyue[i]=$(this).val();
+        });
+        var dataamount=new Array();
+        $(".dataamount").each(function(i){
+               dataamount[i]=$(this).val();
+        });
+        var dataggfei=new Array();
+        $(".dataggfei").each(function(i){
+               dataggfei[i]=$(this).val();
+        });
+
+        var datachunshouru=new Array();
+        $(".datachunshouru").each(function(i){
+               datachunshouru[i]=$(this).val();
+        });
+        
+        // $(".gnamename").each(function(){
+        //     var alert($(this).val());
+        // });
+option = {
+    title : {
+        text: '2017年月营收明细',
+        subtext: ''
+    },
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['注册','活跃','充值','广告费','纯收入']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data : gnamename
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'注册',
+            type:'bar',
+            data:zhuce,
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'活跃',
+            type:'bar',
+            data:datahuoyue,
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        },
+        {
+            name:'充值',
+            type:'bar',
+            data:dataamount,
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        },
+        {
+            name:'广告费',
+            type:'bar',
+            data:dataggfei,
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        },
+        {
+            name:'纯收入',
+            type:'bar',
+            data:datachunshouru,
+            markPoint : {
+                data : [
+                    {name : '年最高', value : 10003, xAxis: 7, yAxis: 183, symbolSize:18},
+                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        }
+    ]
+};
+    // alert($(".gnamename"));
+//     option = {
+//     title: {
+//         x: 'center',
+//         text: '游戏下载排行',
+//         subtext: 'Rainbow bar example',
+//         link: 'http://echarts.baidu.com/doc/example.html'
+//     },
+//     tooltip: {
+//         trigger: 'item'
+//     },
+//     toolbox: {
+//         show: true,
+//         feature: {
+//             dataView: {show: true, readOnly: false},
+//             restore: {show: true},
+//             saveAsImage: {show: true}
+//         }
+//     },
+//     calculable: true,
+//     grid: {
+//         borderWidth: 0,
+//         y: 80,
+//         y2: 60
+//     },
+
+//     xAxis: [
+//         {
+//             type: 'category',
+//             show: false,
+//             data: ["<?php echo $data[0]['gname'];?>", "<?php echo $data[1]['gname'];?>","<?php echo $data[2]['gname'];?>","<?php echo $data[3]['gname'];?>","<?php echo $data[4]['gname'];?>","<?php echo $data[5]['gname'];?>","<?php echo $data[0]['gname'];?>","<?php echo $data[6]['gname'];?>","<?php echo $data[7]['gname'];?>","<?php echo $data[8]['gname'];?>","<?php echo $data[9]['gname'];?>","<?php echo $data[10]['gname'];?>","<?php echo $data[11]['gname'];?>","<?php echo $data[12]['gname'];?>","<?php echo $data[13]['gname'];?>","<?php echo $data[14]['gname'];?>","<?php echo $data[15]['gname'];?>","<?php echo $data[16]['gname'];?>","<?php echo $data[17]['gname'];?>","<?php echo $data[18]['gname'];?>","<?php echo $data[19]['gname'];?>","<?php echo $data[20]['gname'];?>"]
+//         }
+//     ],
+//     yAxis: [
+//         {
+//             type: 'value',
+//             show: false
+//         }
+//     ],
+//     series: [
+//         {
+//             name: '游戏下载次数',
+//             type: 'bar',
+//             itemStyle: {
+//                 normal: {
+//                     color: function(params) {
+//                         // build a color map as your need.
+//                         var colorList = [
+//                           '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+//                            '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',
+//                            '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0','#F0805A','#26C0C0'
+//                         ];
+//                         return colorList[params.dataIndex]
+//                     },
+//                     label: {
+//                         show: true,
+//                         position: 'top',
+//                         formatter: '{b}\n{c}'
+//                     }
+//                 }
+//             },
+//             data: [<?php echo $data[0]['gcount'];?>,<?php echo $data[1]['gcount'];?>,<?php echo $data[2]['gcount'];?>,<?php echo $data[3]['gcount'];?>,<?php echo $data[4]['gcount'];?>,<?php echo $data[5]['gcount'];?>,<?php echo $data[6]['gcount'];?>,<?php echo $data[7]['gcount'];?>,<?php echo $data[8]['gcount'];?>,<?php echo $data[9]['gcount'];?>,<?php echo $data[10]['gcount'];?>,<?php echo $data[11]['gcount'];?>,<?php echo $data[12]['gcount'];?>,<?php echo $data[13]['gcount'];?>,<?php echo $data[14]['gcount'];?>,<?php echo $data[15]['gcount'];?>,<?php echo $data[16]['gcount'];?>,<?php echo $data[17]['gcount'];?>,<?php echo $data[18]['gcount'];?>,],
+//             markPoint: {
+//                 tooltip: {
+//                     trigger: 'item',
+//                     backgroundColor: 'rgba(0,0,0,0)',
+//                     formatter: function(params){
+//                         return '<img src="' 
+//                                 + params.data.symbol.replace('image://', '')
+//                                 + '"/>';
+//                     }
+//                 },
+//                 data: [
+//                     {xAxis:0, y: 350, name:'Line', symbolSize:20, symbol: 'image://../asset/ico/折线图.png'},
+//                     {xAxis:1, y: 350, name:'Bar', symbolSize:20, symbol: 'image://../asset/ico/柱状图.png'},
+//                     {xAxis:2, y: 350, name:'Scatter', symbolSize:20, symbol: 'image://../asset/ico/散点图.png'},
+//                     {xAxis:3, y: 350, name:'K', symbolSize:20, symbol: 'image://../asset/ico/K线图.png'},
+//                     {xAxis:4, y: 350, name:'Pie', symbolSize:20, symbol: 'image://../asset/ico/饼状图.png'},
+//                     {xAxis:5, y: 350, name:'Radar', symbolSize:20, symbol: 'image://../asset/ico/雷达图.png'},
+//                     {xAxis:6, y: 350, name:'Chord', symbolSize:20, symbol: 'image://../asset/ico/和弦图.png'},
+//                     {xAxis:7, y: 350, name:'Force', symbolSize:20, symbol: 'image://../asset/ico/力导向图.png'},
+//                     {xAxis:8, y: 350, name:'Map', symbolSize:20, symbol: 'image://../asset/ico/地图.png'},
+//                     {xAxis:9, y: 350, name:'Gauge', symbolSize:20, symbol: 'image://../asset/ico/仪表盘.png'},
+//                     {xAxis:10, y: 350, name:'Funnel', symbolSize:20, symbol: 'image://../asset/ico/漏斗图.png'},
+//                     {xAxis:10, y: 350, name:'Funnel', symbolSize:20, symbol: 'image://../asset/ico/漏斗图.png'},
+//                     {xAxis:10, y: 350, name:'Funnel', symbolSize:20, symbol: 'image://../asset/ico/漏斗图.png'},
+//                 ]
+//             }
+//         }
+//     ]
+// };
+                    
+        // 为echarts对象加载数据 
+        myChart.setOption(option); 
+
+                    
+    </script>
+</block>

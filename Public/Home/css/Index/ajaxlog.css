@@ -1,0 +1,45 @@
+#ikaimi_login h1,h2,h3,h4,h5,h6,p,ul,li{padding:0;margin:0;list-style:none}
+#ikaimi_login {border:#dfdfdf solid 3px;width:500px;}
+#ikaimi_login a {color:#999;text-decoration: none;}
+#ikaimi_login .sub_btn1,#ikaimi_login .sub_btn2{margin:0 2px;cursor:pointer;background:url(../images/toplog.gif)  no-repeat 0px 0px;height:30px;width:100px;border:0px;display:inline-block;}
+#ikaimi_login .sub_btn1:hover {background:url(../images/toplog.gif)  no-repeat 0px -40px;}
+#ikaimi_login .sub_btn2 {background:url(../images/topreg.gif)  no-repeat 0px 0px;}
+#ikaimi_login .sub_btn2:hover {background:url(../images/topreg.gif)  no-repeat 0px -40px;}
+#ikaimi_login a.sub_btn_qq {margin:0 2px;background:url(../images/qqlog.gif)  no-repeat 0px 0px;height:30px;width:130px;display:inline-block;}
+#ikaimi_login a:hover.sub_btn_qq {background:url(../images/qqlog.gif)  no-repeat 0px -40px;}
+#ikaimi_login .inputbg { height:40px;width:280px;margin:0 auto;margin-top:20px;border-radius:4px;border:1px solid #eee;text-align:left;}
+#ikaimi_login #username * { vertical-align:middle;}
+#ikaimi_login .inputsub{font-size:14px;width:270px;float:left;border:none;text-align:left;color:#333;margin:10px 0 3px 8px;background:none;overflow:hidden;}
+#ikaimi_login .buttons { width:280px;margin:0 auto;margin-top:25px;text-align:left}
+#ikaimi_login #login-sub{width:100px;height:35px}
+#ikaimi_login #qql {float:right}
+#ikaimi_login .reg { padding:20px;margin:0 auto;width:280px}
+#ikaimi_login #login{margin-top:20px}
+#ikaimi_login .hidden{display:none;}
+#ikaimi_login{position:absolute;width:500px;background:#fff; display:none;color:#999}
+#ikaimi_login .js_title{overflow:hidden;height:42px;background:#f9f9f9;border:1px solid #ccc;}
+#ikaimi_login .js_title span a{ float:right; line-height:40px; padding:0 9px;cursor:pointer;font-family:"";font-size:30px;}
+#ikaimi_login .js_title span a:hover{color:#555}
+#ikaimi_login .js_title li{float:left;width:130px;text-align:center;font-family:"微软雅黑";font-size:18px;cursor:pointer;height:43px;}
+#ikaimi_login .js_title li a{float:left;width:130px;text-align:center;}
+#ikaimi_login .js_title li a:hover{}
+#ikaimi_login .conxk1,#ikaimi_login .conxk2{border-right:1px solid #dfdfdf;background:#fff;height:39px;line-height:39px;color:#333;}
+#ikaimi_login .conxk1 a{color:#11B200;text-decoration:none;}
+#ikaimi_login .conxk2{background:#f9f9f9;color:#646464;}
+#ikaimi_login .conxk2 a{color:#646464;text-decoration:none;}
+#ikaimi_login .conxk3{height:39px;line-height:39px;padding-top:3px;color:#646464;}
+#ikaimi_login .js_content{overflow:hidden;padding:13px 15px;background:#fff;border:1px solid #ccc;border-top-width:0px}
+#ikaimi_login .js_content .de_list{width:100%;padding-top:12px;}
+#ikaimi_login .js_content .de_list #login{width:100%;background:#fff url(../images/logby.gif)  no-repeat 20px 10px;}
+#ikaimi_login .js_content a:visited{ color:#999}
+#ikaimi_login  .js_content a:hover { color:red; text-decoration: underline; }
+#ikaimi_login .Reg-input{display:block;clear:both;padding:5px 0}
+#ikaimi_login .Reg-input li{display:inline;float:left;height:35px;}
+#ikaimi_login .Reg-input .input-text{width:220px;height:25px;line-height:25px;border:1px solid #ccc;outline:none;border-radius:2px}
+#ikaimi_login .input-text:focus{border:1px solid #339933;}
+#ikaimi_login .Reg-input .Reg-text{width:100px;text-align:right;font-size:14px;}
+#ikaimi_login .Reg-input .input_text{width:70px;float:left}
+#ikaimi_login #checkbox{text-align:left;}
+#ikaimi_login #errmsg{color:red}
+#lean_overlay { position: fixed;z-index:100;top: 0px;left: 0px;height:100%; width:100%; background: #000;display: none;}
+#show_userinfo a b{color:#f60;font-size:14px;}

@@ -1,0 +1,322 @@
+@charset "utf-8";
+/* CSS Document */
+@media screen and (max-device-width: 320px){body{-webkit-text-size-adjust:none}}
+@media screen and (max-device-width: 480px){body{-webkit-text-size-adjust:none}}
+@media only screen and (-webkit-min-device-pixel-ratio: 2){body{-webkit-text-size-adjust:none}}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){body{-webkit-text-size-adjust:none}}
+html,body,
+h1,h2,h3,h4,h5,h6,
+p,dl,dt,dd,ul,ol{margin:0;padding:0;}
+img{border:0 none;}
+img { vertical-align:middle}
+ul,ol{ list-style:none}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;}
+html,body{ overflow-x:hidden;}
+body,input{ line-height:1.5; font:normal 12px '\5FAE\8F6F\96C5\9ED1',Arial,'\5B8B\4F53',sans-serif;}
+header,footer,nav,section,small{display:block;}
+a { text-decoration:none; color:#333}
+a:focus{outline:0;}
+.clearfix:after { clear:both; display:block; height:0; visibility:hidden; overflow:hidden; content:'.'}
+* html .clearfix { zoom:1}
+*+html .clearfix { min-height:1px}
+.tc{ text-align:center;}
+.fl{ float:left;}
+.fr{ float:right;}
+.pa{ position:absolute;}
+.pr{ position:relative;}
+.of{overflow:hidden}
+.red{color:red}
+.orange{color:#ff7800;margin:0 5px}
+.orange2{color:#ff7800;}
+.grayA{color:#888888}
+.grayB{color:#555555}
+.green{color:#360}
+.blue{color:#369}
+.content{margin:0 auto;min-width:320px;}
+
+/* public */
+.header{width:100%;height:50px;background:#333638;text-align:center;line-height:50px;color:#fff}
+.fixed-f{position:fixed;top:0;z-index:999}
+.logo{width:127px;height:37px;margin-left:10px;}
+.logo img{vertical-align:auto;width:127px;height:37px;}
+.mySelf {float:right;display:block;float:right;width:32px;height:32px;background:url(../img/icons.png) 0px 0px no-repeat;margin:9px;background-size:32px 272px;}
+.header .tlogin{background-position:0px -239px}
+.back{float:left;width:17px;height:20px;background:url(../img/icons.png) 0px -169px no-repeat;margin:15px;background-size:32px 272px;}
+.menu{float:right;width:32px;height:32px;background:url(../img/icons.png) 0px -197px no-repeat;margin:10px 5px;background-size:32px 272px;margin: 9px 5px;}
+.search{padding:0 2%;position:relative;overflow: hidden;}
+.search input{height:32px;border:1px solid #e4e4e4;border-right:none;width:94%;float:left;background:#fbfafa;padding-left:15px;margin:10px 0}
+.search input:focus{outline:none}
+.search input.searchBtn{position:absolute;right:3px;width:38px;top:0px;height:38px;background: #9d9d9d url(../img/icons.png) 5px -32px no-repeat;background-size:28px 258px;border:0px;}
+.nav{border-bottom:3px solid #ff7800;background:#f7f7f7}
+.nav ul{margin:11px 0;overflow:hidden}
+.nav ul li{float:left;border-left:1px solid #e7e7e7;text-align:center;font-size:14px;width:19.72%;}
+.nav ul li:first-child{border:none}
+.nav ul .avtive{color:#ff7800;}
+/*footer*/
+.goTop{position:fixed;right:12px;bottom:130px;width:40px;height:40px;border:2px solid #fff;background:#98a3ac url(../img/sprite.png) 5px -252px no-repeat;border-radius:40px;opacity:.8;z-index:99;}
+
+footer{line-height:24px; background:#fff;}
+footer nav{margin:0;height:36px;background-color:#666d75;color:#fff;border-bottom:1px solid #e2e2e2;padding-top:0}
+footer nav a{display:inline-block;width:20%;height:24px;margin:6px 0;color:#fff;text-align:center; font-size:14px;}
+footer nav a:nth-child(5){background-image:none;}
+footer small{font-size:12px;text-align:center;color:#999;padding:6px 0;margin:auto;}
+
+.topIcon{display:inline-block;margin-left:5px;width:13px;height:15px;background:url(../img/icons.png) 0px -108px no-repeat;vertical-align:-1px;background-size:32px 272px;}
+.waitIcon{display:inline-block;margin-left:5px;width:15px;height:14px;background:url(../img/icons.png) -1px -152px no-repeat;vertical-align:-2px;background-size:32px 272px;}
+.moreIcon{display:inline-block;margin-left:5px;width:11px;height:20px;background:url(../img/icons.png) 0px -81px no-repeat;vertical-align:-4px;background-size:32px 272px;}
+.foot{width:100%;height:50px;line-height:50px;background:#e9e9e9;text-align:center;color:#625d5d}
+
+/* 首页开始   */
+.dressingRoom{width:100%;height:150px;overflow:hidden}
+.dressingRoom img{width:100%;height:150px;}
+.swipe-wrap{width:100%;height:150px;}
+.swipe-wrap .wrap{position:relative}
+.swipe img{width:100%;height:150px;}
+.DROver{width:100%;height:40px;background:url(../img/dressing-over-bg.png) repeat;position:absolute;top:110px;left:0;line-height:40px;text-align:center;color:#fff;font-size:14px;opacity:0.4}
+.line{border-top:3px solid #ff7800;}
+.title{font-size:15px;text-indent:10px;border-bottom:1px solid #eeeeee;line-height:40px;background:#f7f7f7}
+.gameImg img{width:48px;height:48px;border-radius:10px;}
+.lineIn{border-top:1px solid #eeeeee;}
+.lineIn li{float:left;width:40%;padding:10px 5%;}
+.detail{margin-left:3%;width:57%}
+.detail h2{font-size:14px;}
+.detail a{display:block;color:#333333;font-size:14px;line-height: 15px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.detail p{line-height:18px;width:100%font-size:12px;color:#888888;font-size:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.likeMore{display:block;height:40px;width:96%;border:1px solid #e9e9e9;line-height:40px;font-size:14px;margin:10px auto;text-align:center;background:#f7f7f7;margin-top:0}
+.title .findResult{font-size:14px;color:#888888;float:right;margin-right:10px;}
+.guessList{overflow: hidden;}
+.guessList li{float:left;width:25%;padding:10px 0;}
+.guessList li:first-child{}
+.guessList li div{text-align:center;line-height:25px;font-size:12px;}
+.guessList li div a img{width:48px;height:48px;}
+/* 礼包大全页面 */
+.tabs{width:100%;height:43px;overflow:hidden}
+.tabs li{cursor:pointer;position:relative;width:119px;height:40px;float:left;border:1px solid #ccc;border-top:2px solid #ccc;margin-left:-1px;text-align:center;font-size:18px;line-height:40px;}
+.tabs ul{position:absolute;}
+.tabs ul li:first-child a{border-left:none;}
+.tabs ul li.tabActive a{height:41px;border-bottom:none;background:#fff;border-top:2px solid #ff7800;}
+
+.tabs1{width:100%;height:43px;position:relative}
+.tabs1 ul{position:absolute;width:100%}
+.tabs1 li a{cursor:pointer;position:relative;height:40px;float:left;border:1px solid #ccc;border-top:2px solid #ccc;margin-left:-1px;text-align:center;font-size:14px;line-height:40px;}
+.tabs1li a{width:24.75%;}
+.tabs1 ul li:first-child a{border-left:none;}
+.tabs1 ul li.tabActive a{height:41px;border-bottom:none;background:#fff;border-top:2px solid #ff7800;}
+.game{display:block;overflow:hidden;}
+.enterIcon{float:right;width:17px;height:20px;background:url(../img/icons.png) 0px -127px no-repeat;margin-top:14px;background-size:32px 272px;} 
+.gameList li {padding:10px 15px 10px 13px;border-top:1px solid #eeeeee;}
+.gameList li:first-child{border-top:none}
+.gameDetail{float:left;margin-left:10px;width:70%;overflow:hidden}
+.gameDetail h2{font-size:14px;color:#333333;line-height:22px;}
+.gameDetail p{line-height:26px;color:#888888;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:90%;}
+.giftDesc .explainStatusBg{margin-top:9px}
+.gameImg{width:48px;height:48px;}
+.gameImg img{border-radius:7px;width:48px;height:48px;}
+.tabs3{width:100%;height:43px;position:relative}
+.tabs3 ul{position:absolute;width:100%}
+.tabs3 li a{cursor:pointer;position:relative;height:40px;float:left;border:1px solid #ccc;border-top:2px solid #ccc;margin-left:-1px;text-align:center;font-size:14px;line-height:40px;}
+.tabs3 li a{width:49.75%;}
+.tabs3 ul li:first-child a{border-left:none;}
+.tabs3 ul li.curr a{height:41px;border-bottom:none;background:#fff;border-top:2px solid #ff7800;}
+/* 游戏礼包详情  */
+.titleName{width:110px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:inline-block;font-size:14px;}
+.gameMain{width:100%;padding:12px;overflow: hidden;}
+.detail2{margin-left:10px;}
+.detail2 h2{color:#333333;width:100px;line-height:20px;font-size:14px;}
+.detail2 p{color:#888888;font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:100px;line-height:30px;font-size:12px;}
+.line2{border-top:3px solid #e7e7e7;}
+.lineTitle{background:#f7f7f7;}
+.lineTitle a{display:block;width:105px;height:40px;border-top:3px solid #FF7800;margin-top:-3px;text-align:left;line-height:40px;font-size:14px;text-indent:10px;color:#333333}
+.giftList li{padding:8px 2px 8px 10px;border-top:1px solid #eeeeee;overflow:hidden;height:34px;line-height:34px;overflow:hidden}
+.giftList li:first-child{border-top:none}
+.giftName{width:65%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;float:left;font-size:14px;}
+.statusBg{width:20%;height:8px;background:#e1e1e1;float:left;margin-top:14px;}
+.statusOver{width:70%;height:8px;background:#5dca3f;float:left}
+.remainder{display:inline-block;width:22%;text-align:left;margin:0 1%;float:left}
+.remain{font-size:12px;color:#888888}
+.getBtn{margin-left:0.7%;line-height:23px;width:14%;border-radius:5px;margin-top:2px;text-align:center;color:#fff;display:inline-block;float:right;}
+.btnC{display:block;height:30px;border-radius:8px;text-align:center;line-height:30px;color:#fff;border:none;width:96%;margin:5px auto 20px auto;}
+.btns-1{background:#75d25c}
+.btns-2{background:#ff8c26}
+.btns-3{background:#45bdf1}
+.btns-4{background:#888}
+.receive{background:#67d449;}
+.receive2{background:#d6d6d6}
+.scheduleBtn{background:#57bbe7}
+.RandomBtn{background:#ff9c44}
+.line3{width:100%;overflow:hidden;margin-bottom: 10px;}
+.line3 ul{overflow: hidden;}
+.line3 ul li{width:32%;height:40px;float:left;text-align:center;line-height:40px;font-size:15px;}
+.line3 ul li a{color:#fff!important}
+
+/* 领取成功（复制成功） */
+.container_out{width:100%;background:#333638;padding-bottom: 10px;}
+.container2{width:98%;margin:0 auto;height:50px;border-bottom:1px solid #e7e7e7;line-height:50px;font-size:14px;background:#f7f7f7;}
+.container2 p{text-indent:10px;background:url(../img/success-bg.png) 11px 13px no-repeat;font-size:14px}
+.desc2{padding-top:10px;width:98%;margin:0px auto;border-bottom:1px solid #E7E7E7;background:#f7f7f7;}
+.codetext{padding-left:20px;font-size:14px;color:#787878;}
+.activeCode,.activeCode2{border-bottom:1px dashed #E7E7E7;padding-left:20px;font-size:14px}
+.activeCode{line-height: 50px;}
+.activeCode2{line-height:30px;}
+.container{border-bottom:1px solid #e7e7e7;font-size:14px;background:#f7f7f7;}
+.container p{background:url(../img/success-bg.png) 12px 7px no-repeat;font-size:12px;background-size:20px 20px;padding-left:45px;line-height:35px;overflow:hidden;width:100%;white-space:nowrap; }
+.desc1{margin:10px;border-bottom:1px solid #E7E7E7;background:#f7f7f7;}
+.activeCode{height:50px;line-height:50px;border-bottom:1px dashed #E7E7E7;padding-left:20px;font-size:14px}
+.tips{padding:20px;font-size:14px;border-bottom:1px dashed #E7E7E7}
+.tips p{line-height:26px;}
+.tips a{color:#0078b6}
+.btns,.btns2{margin:10px auto;width:70%;text-align:center;}
+.btns a{display:inline-block;width:40%;line-height:30px;text-align:center;border-radius:8px;color:#fff;font-size:14px;}
+.blueBtn{background:#6acdea;margin:0 7%}
+.greenBtn{background:#488c0b}
+.blackBtn{background:#333638;margin:0 7%}
+.btns2 a{display:block;width:40%;line-height:35px;text-align:center;border-radius:8px;color:#fff;margin:0 auto}
+
+
+
+
+.gmdetaDown{width:88%;background:#fff;overflow:hidden;position:absolute;z-index:5000;margin:0 6%;padding:10px 0;text-align:center;top:50px;}
+.gmdetaDown h2{font:bold 18px/30px "\5FAE\8F6F\96C5\9ED1";width:100%;display:inline-block; margin-bottom:10px;}
+.full{width:100%;height:100%;position:absolute;background:#000000;opacity:0.5;filter:alpha(opacity=50);top:0;left:0;z-index:100000000000000000000000002;}
+
+/* 礼包详情（未领取） */
+.giftDetail{padding:0;background:#333638}
+.gift-name{text-indent:10px;background:#f7f7f7;line-height:40px;font-size:14px;width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.gift-detail{background:#fff;font-size:14px}
+.gift-content-title{color:#333;font-size:14px;font-weight:bold;}
+.gift-content{padding:10px;font-size:14px;color:#555;line-height:25px;}
+.gift-desc {color:#333;line-height:30px;}
+.gift-desc a{color:#0078b6;}
+.gift-content2{background:#f7f7f7;font-size:14px;color:#333333;line-height:25px;font-size:14px;width:92%;padding:3%;margin:0 auto;}
+.getGift,.taohao,.reserve,.reserved,.shenqing,.getGiftBefore{display:block;width:112px;height:30px;border-radius:8px;text-align:center;line-height:30px;color:#fff;margin:0 auto;margin-top:15px;}
+.getGift{background:#67d449;border:none;width:96%;margin:5px auto 20px auto;}
+.getGiftBefore{ background-color:#999; border:none;}
+.taohao{background: #ff9c44;}
+.reserve{background: #57bbe7;}
+.reserved{background:#d6d6d6;}
+.shenqing{background: #488c0b;}
+.line4{width:100%;}
+.line4 .tabs li{background:#f7f7f7;cursor:pointer;position:relative;width:49.9%;height:40px;float:left;border:1px solid #ccc;border-top:2px solid #ccc;margin-left:-1px;text-align:center;font-size:14px;line-height:40px;}
+.line4 .tabs li:first-child{border-left:none;}
+.line4 .tabs .line4Active{height:41px;border-bottom:none;background:#fff;border-top:2px solid #ff7800;background:#fff}
+.details{padding:10px 5px 10px 10px;overflow:hidden}
+.details img{width:48px;height:48px; margin-right:10px;}
+.details p{color:#333638;line-height:20px;}
+.details span.succ{float:left;width:48px;height:48px;display:inline-block;margin-right:10px;background:url(../img/succ.png)  no-repeat 0px 0px;}
+.details li.cgts{color:#999;line-height:20px;font-size:12px;}
+.giftExplain{margin-left:5px;width:70%;line-height:25px;font-size:14px;color:#333333;}
+.giftExplain .syl_xs{width:40%;height:8px;background:#e1e1e1;float:left;margin:10px 5px 0 0;overflow:hidden; }
+.giftExplain .syl_xs em{ display:block; float:left; height:8px;}
+.giftExplain .syl_xs em span{width:100%;height:8px;background:#5dca3f;float:left}
+.cardpass{line-height:48px;height:48px;font-size:18px;color:#F6505C;}
+.details .qqtx{display:block; float:left; height:28px;line-height:28px;width:120px;border-radius:5px;margin-top:2px;text-align:center;color:#fff;display:inline-block;background:#45BDF1}
+.explainStatusBg{width:40%;height:8px;background:#e1e1e1;float:left;margin:5px 5px 0 0;overflow:hidden}
+.explainStatusOver{width:70%;height:8px;background:#5dca3f;float:left}
+.useAge,.useAge2{text-align:center;width:96%;margin:0 auto;}
+.useAge{border-top:1px dashed #d2d2d2;line-height:30px;}
+.useAge2{line-height: 20px;}
+.line4Title{background:#f7f7f7;border-top:2px solid #ff7800;line-height:40px;text-indent:30px;font-size:14px;}
+#thlb,#zc{display:none;position:relative;z-index:1;}
+#clti,#qhts{display:none;position:absolute;top:0px;left:0px;z-index:999999;background:#fff url(../img/loading.gif) center 10px no-repeat;width:100%; height:300px; margin:auto; line-height:20px;filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;}
+#qhts{background:#F8F8F8 url(../img/loading.gif) 70% 50px no-repeat;}
+
+
+.zxrk_main{ width:100%;margin:0px auto 10px;font-size:12px;display:block;clear:both;padding:0px}
+.zxrk_table tr td{border:0px;text-align:center; height:34px;line-height:34px; color:#555;margin:0px;padding:0px}
+.zxrk_table tr td a{ display:block; float:right;width:42px; height:21px; margin:8px 3px 0px 0px; border-radius:4px; line-height:21px; color:#fff}
+.zxrk_table tr td a.btn1{background:#46C923}
+.zxrk_table tr td a.btn2{background:#888}
+/* 淘号成功 */
+.desc1 .copyBtn{display:inline-block;margin-left:10px;color:#fff;text-align:center;width:16%;line-height:28px;background:#333638;border-radius:7px;}
+
+/* 确认领取 */
+.btns .goBack{background:none;color:#0078b6;margin:0 4%;width:50%}
+
+
+/* 我的礼包 */
+.tabs2li{width:33.19%}
+.tabsUl{margin-bottom:10px;}
+.tabsUl li a{display:block;overflow:hidden}
+.tabsUl li a img{width:48px;height:48px;}
+.giftDesc2{padding:5px 10px;width:65%;line-height:25px;float:left;}
+.giftDesc2 p{font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.giftName2{line-height:45px}
+.validity{color:#888888}
+.enterIcon2{float:right;width:17px;height:21px;background:url(../img/icons.png) 0px -131px no-repeat;margin-top:20px;margin-right:15px}
+.myGiftActive{padding:0 2%;line-height:40px;overflow:hidden;background:#f9f9f9}
+.myGiftActive .already{color:#888888;float:right}
+.hasGet{padding-left:24px;line-height:35px;height:35px;color:#787878}
+.tabsUl .hasGet a{display:inline-block;position:relative;top:5px;float:right;margin-right:16px;}
+.remainBG2{width:30%;background:#e1e1e1;height:8px;display:block;float:left;margin-top:15px;margin-right:10px}
+.remainOver2{width:70%;background:#5dca3f;height:8px;display:block}
+
+.prop li{padding:10px;overflow:hidden;}
+.prop img{margin:5px 0;width:48px;height:48px;}
+.prop li .detail{margin-left:10px;width:70%;}
+.prop li h2{font-size:14px;}
+.prop li p{font-size:12px;white-space:normal}
+.guild li{padding:10px;}
+.guild h2{font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.guild li p{font-size:12px;}
+.guild .detail{margin-left:10px;width:60%;line-height:25px;}
+.searchTitle{border-top:1px solid #ff7800;background:#f7f7f7;line-height:40px;padding-left:10px;font-size:16px}
+.line5-detail{padding:10px;}
+.line5-detail img{width:48px;height:48px;}
+.line5Detail{margin-left:10px;line-height:25px;}
+.resultList li{padding:8px 2%;border-bottom:1px solid #eeeeee;overflow:hidden;height:34px;line-height:34px;overflow:hidden}
+.resultList .giftName{width:80%}
+#nologin{width:100%;height:100%;background:#000;opacity:.7;position:fixed;top:0;left:0;z-index:1;}
+#nologints {background:url(../img/nologin.png) right top no-repeat;width:250px;height:163px;position:fixed;top:50px;right:0;z-index:2;display:block;}
+
+/*user*/
+.full{width:100%;height:100%;background-color:#000;opacity:.7;position:fixed;top:0;left:0;z-index:1;display:none}
+.userInfo{width:80%;height:100%;position:fixed;right:0;top:0;background-color:#f8f8f8;z-index:9999;}
+.userInfo .title,#menu-bar .title{margin:0;width:auto;padding:0 10px;height:30px;background-color:#f5f5f5;color:#333;font:bold 18px/50px normal;}
+.userInfo .title a,#menu-bar .title a{display:block;float:right;margin-top:5px;width:20px;height:20px;background:url(../img/sprite-2.png) no-repeat}
+.userInfo ul{padding:10px;height:100%;}
+.userInfo ul li{border-bottom:1px solid #e2e2e2;font-size:16px;float:left; width:100%;padding:10px 0;line-height:25px;}
+.userInfo ul li span{color:#666;padding-right:6px;}
+.userInfo ul li em{display:inline-block;padding:0 4px;margin:0 4px;background-color:#ff7800;font:bold 16px/22px normal;color:#fff;border-radius:5px;}
+.userInfo ul li a{display:block;}
+.userInfo ul li img{float:left;width:60px;height:60px;border-radius:5px;margin-right:10px;}
+.userInfo .orange{color:#ff7800;font-weight:bold;}
+.loginR  {width:92%;display:block;margin:10px;}
+.loginR .title {font-size:22px;display:block;height:40px;line-height:40px;width:100%;margin-bottom:20px;border-left:3px solid #c61e02;background:#f8f8f8;border-bottom:0px;}
+.loginR .li {display:block;height:50px;width:100%;}
+.loginR .li .input,.loginR .li .code{height:32px;width:100%;-webkit-border-radius:5px;border-radius:5px;border:#acacac 1px solid;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding-left:5px;}
+.loginR .li .code{width:50%;}
+.loginR .li a.submit{float:left;height:40px;border-radius:8px;text-align:center;line-height:40px;color:#fff;border:none;width:100px;margin-right:20px;background:#f60}
+.loginR .li a.link{color:#369;font-size:14px;line-height:36px;}
+.loginR .li img.codeimg{height:30px;border-radius:8px;margin:-3px 0px 0px 10px;}
+.loginR .hr{display:block;height:10px;width:100%;}
+#menu-bar { position:fixed;top:0; z-index:10001; width:80%;height:100%; background:#f8f8f8;right:-100%}
+#menu-bar.fromto {-webkit-transform:translateX(0);-moz-transform:translateX(0); transform:translateX(0)}
+#menu-bar li { font-size:14px;border-left:2px solid #fff; height:35px; line-height:35px; border-bottom:1px solid #eee; text-indent:1em;}
+#menu-bar li:hover { border-left:2px solid #ff7800}
+
+/*0702*/
+.yzmBox{margin:10px 0 0;font-size:12px;color:#999;text-align:center;}
+.yzmBox img{width:130px;height:30px;}
+.yzmBox input{width:120px;height:28px; border:1px solid #888;padding:0 5px; line-height:28px; vertical-align:middle;}
+
+/*0724*/
+.verifyBox{padding:10px 2%;font-size:14px;}
+.verifyBox strong{font-size:30px;padding:10px 0 0;color:#ff6e00;display:block; text-align:center;}
+.verifyTips{border:1px solid #d5d5d5; background-color:#f7f7f7;padding:2px 5px;font-size:12px;line-height:20px;color:#777;margin:15px auto 10px;}
+.verifyTips span{color:#ff6e00;}
+.verifyBox form{margin:10px auto; text-align:center;}
+.verifyInput{height:24px;line-height:24px;border:1px solid #ccc;margin-right:5px;}
+.verifyBtn{border-radius:8px;color:#fff;height:30px;width:90px;border:none; background-color:#67d449;}
+.wrongTips{color:#cd0000;padding:5px 0; text-align:center;}
+.tips2{border-top:1px dotted #d5d5d5;margin:5px auto;padding:8px 0;font-size:12px;}
+.send{text-align:center;padding:5px 0}
+.tLeft{ text-align:left; border-top:1px dotted #d5d5d5;padding:6px 0;}
+.finish{font-size:22px; text-align:center;line-height:30px;border-bottom:1px dotted #d5d5d5;padding:10px 0;margin-bottom:9px;}
+.otherGift strong{color:#333;font-size:14px; text-align:left;padding:0 0 10px;}
+.otherGift ul{float:left;margin-bottom:10px;width:100%;}
+.otherGift li{float:left;width:30%;padding:0 1.5%;text-align:center;}
+.otherGift li img{width:72px;height:72px;margin-bottom:5px;}
+
+#plist{width:100%;padding-top:20px;height:50px;text-align:center;border-top:1px dotted #D9D9D9;}
+#plist a,#plist b{display:inline-block;padding:3px 8px;margin:2px 5px;}
+#plist b{color:#fff;background-color:#404952;}

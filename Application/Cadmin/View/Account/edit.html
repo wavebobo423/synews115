@@ -1,0 +1,123 @@
+<extend name="Base/base" />
+<block name="body">
+    <!-- main content -->
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa icon-home"></i></a></li>
+        <li><a href="{:U('index')}">账户管理</a></li>
+        <li class="active">{$item['id']?'添加':'修改'}</li>
+    </ol>
+    <div class="headline">
+        <h3>{$item['id']?'添加':'修改'}</h3>
+    </div>
+    <p><i class="fa fa-asterisk color-red"></i>&nbsp;&nbsp;required</p>
+    <form id="submitForm" class="" method="post" role="form" action="__SELF__">
+        <div class="form-group">
+            <label for="name" class="required">Title<span></span></label>
+            <input type="text" class="form-control" name="name" id="name" value="{$item.name}" />
+        </div>
+        <div class="form-group">
+            <label for="nameCn" class="required">中文标题<span></span></label>
+            <input type="text" class="form-control" name="name_cn" id="nameCn" value="{$item.name_cn}" />
+        </div>
+        <div class="form-group">
+            <label class="required">Time Period(活动时间：开始时间-结束时间)</label>
+            <div class="input-group">
+                <input name="start_time" id="start_time" class="form-control start_time" type="text" placeholder="start time">
+                <div class="input-group-addon">to</div>
+                <input name="end_time" id="end_time" class="form-control end_time" type="text" placeholder="end time">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="editor" class="required">Auction Description</label>
+            <textarea id="editor" class="form-control" name="content" type="text/plain">{$item.content}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="editorCn" class="required">拍卖文案中文版</label>
+            <textarea id="editorCn" class="form-control" name="content_cn" type="text/plain">{$item.content_cn}</textarea>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">保存</button>
+            <button type="reset" class="btn btn-danger">取消</button>
+        </div>
+    </form>
+</block>
+<block name="script">
+    <link href="__STATIC__/plugins/umeditor/themes/default/css/umeditor.css" rel="stylesheet">
+    <script src="__STATIC__/plugins/umeditor/umeditor.config.js"></script>
+    <script src="__STATIC__/plugins/umeditor/umeditor.min.js"></script>
+    <script>
+        var um = UM.getEditor("editor", {
+            initialFrameWidth: 'auto',
+            initialFrameHeight: 400,
+            autoHeightEnabled: true,
+            autoFloatEnabled: false,
+            serverUrl: "{:U('editorUpload')}",
+            lang:"en",
+            toolbar:[
+                'undo redo | bold italic underline strikethrough | forecolor backcolor | removeformat |',
+                'insertorderedlist insertunorderedlist | selectall cleardoc paragraph | fontfamily fontsize' ,
+                '| justifyleft justifycenter justifyright justifyjustify |',
+                'link unlink'
+            ]
+        });
+        var um = UM.getEditor("editorCn", {
+            initialFrameWidth: 'auto',
+            initialFrameHeight: 400,
+            autoHeightEnabled: true,
+            autoFloatEnabled: false,
+            serverUrl: "{:U('editorUpload')}",
+            // lang:"en",
+            toolbar:[
+                'undo redo | bold italic underline strikethrough | forecolor backcolor | removeformat |',
+                'insertorderedlist insertunorderedlist | selectall cleardoc paragraph | fontfamily fontsize' ,
+                '| justifyleft justifycenter justifyright justifyjustify |',
+                'link unlink'
+            ]
+        });
+
+        $('#start_time').datetimepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+        $('#end_time').datetimepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+        $().ready(function() {
+            // validate signup form on keyup and submit
+            $("#submitForm").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        maxlength: 100
+                    },
+                    name_cn: {
+                        required: true,
+                        maxlength: 100
+                    },
+                    start_time: {
+                        required: true
+                    },
+                    end_time: {
+                        required: true
+                    },
+                    editor: {
+                        required: true,
+                        minlength: 10
+                    },
+                    editorCn: {
+                        required: true,
+                        minlength: 10
+                    }
+                }
+            });
+        });
+    </script>
+</block>

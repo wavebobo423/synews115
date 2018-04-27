@@ -1,0 +1,224 @@
+<block name="title">
+    <title>最新手游公益服开服表|手机网游无限元宝公益服开服榜|手游私服开服表-115手游</title>
+</block>
+<block name="keywords">
+    <meta name="keywords" content="手游私服开服表,手游公益服开服时间表,BT手游开服表,手机游戏开服表">
+</block>
+<block name="description">
+    <meta name="description" content="手游开服表是由115手机游戏网为广大玩家提供的,内含最新手游公益服开服表、最新手机游戏私服开服时间,想要了解、查询手机网游无限元宝公益服以及手机游戏私服开服榜的朋友可以在此处找到最详细的开服信息!">
+</block>
+<extend name="Public:main" />
+<block name="main">
+<style>
+    body{
+      background:#f4f4f4;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/Index/mstyle.css">
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/Index/pojie_list.css"> -->
+<!--main:begin-->
+<div id="wrap" style="width:1000px;">
+<div class="ngGprs">
+<span class="gprs"></span>您的位置：<a href="#">首页</a>&nbsp;&gt;&nbsp;<a href="#">开服表</a>
+</div>
+<script type="text/javascript">
+$(function () {
+var $filterContainer = $("#filterContainer");
+$("a[id^='type_'],a[id^='beta_'],a[id^='time_']", $filterContainer).click(function () {
+var clicktype = $(this).data("type");
+var value = $(this).data("value");
+$("#" + clicktype, $filterContainer).val(value);
+var base_url = $("#base_url", $filterContainer).val();
+var type = $("#type", $filterContainer).val();
+var beta = $("#beta", $filterContainer).val();
+var time = $("#time", $filterContainer).val();
+var keyword = $("#index_search_input").val();
+var href = base_url + "?type=" + type + "&beta=" + beta + "&time=" + time + "&q=" + keyword;
+location.href = href;
+});
+});
+</script>
+<div class="news_tab">
+<ul>
+<li class="hover"><a href="javascript: ;">今日开服</a></li>
+<li><a href="javascript: ;">即将开服</a></li>
+<li><a href="javascript: ;">已开服</a></li>
+</ul>
+</div>
+<section>
+<table class="stest-list" cellpadding="0" cellspacing="0" id="contentWrapper">
+<thead>
+<tr style="background: #f6f6f6;border-top: 1px solid #dcdcdc;">
+<td class="scol-1" style="border-left:3px solid #fff;">开服时间</td>
+<td class="scol-2">游戏名称</td>
+<td class="scol-3">服务器名</td>
+
+
+<td class="scol-6">游戏平台</td>
+<td class="scol-7">下载</td>
+<td class="scol-8" style="border-right:3px solid #fff;">领号</td>
+</tr>
+</thead>
+<tbody>
+    <?php foreach ($Daykaifu as $dk => $dv) {
+            $Game=M('gameinfo')->where("gamename='".$dv['gamename']."'")->find();
+            if(empty($Game)){
+                continue;
+            }
+    ?>
+    <tr class="bg-g">
+        <td class="scol-1 tdate"><em>今日</em><span><?php echo date("H:i",$dv['kfday']);?></span></td>
+    
+        <td class="scol-2"><a href="<?php echo U('listseo/'.$Game['seourl']);?>"><img src="__PUBLIC__/Upload/Product/<?php echo $Game['logo']?>" title="<?php echo $Game['gamename']?>"><em><?php echo $Game['gamename']?></em></a></td>
+       <td class="scol-3"><em><?php echo $dv['server']?></em></td>
+        <td class="scol-6">
+            <?php 
+                $os=explode(",",$dv['os']);
+
+                if($os[0]==1){
+            ?>
+                <i class="and spr"></i>
+            
+            <?php } if($os[1]==2  OR $os[0]==2){?>    
+                 <i class="ios spr"></i>
+            <?php }?>                
+        </td>
+        <td class="scol-7">
+            <a class="tbtn-2 spr" href="<?php echo U('listseo/'.$Game['seourl']);?>"></a>
+        </td>
+        <td class="scol-8">
+            <a target="_blank" href="<?php echo U('Lbname/'.$Game['id']);?>" class="g-btn">领取</a>
+        </td>
+    </tr>
+    <?php }?>
+    </tbody>
+</table>
+
+
+</section>
+<section style="display:none;">
+<table class="stest-list" cellpadding="0" cellspacing="0" id="contentWrapper">
+<thead>
+<tr style="background: #f6f6f6;border-top: 1px solid #dcdcdc;">
+<td class="scol-1" style="border-left:3px solid #fff;">开服时间</td>
+<td class="scol-2">游戏名称</td>
+<td class="scol-3">服务器名</td>
+
+
+<td class="scol-6">游戏平台</td>
+<td class="scol-7">下载</td>
+<td class="scol-8" style="border-right:3px solid #fff;">领号</td>
+</tr>
+</thead>
+    <tbody>
+      <?php foreach ($Monkaifu as $dk => $dv) {
+            $Game=M('gameinfo')->where("gamename='".$dv['gamename']."'")->find();
+            if(empty($Game)){
+                continue;
+            }
+    ?>
+    <tr class="bg-g">
+        <td class="scol-1 ydate"><em><?php echo date('m-d',$dv['kfday']);?></em><span><?php echo date("H:i",$dv['kdtime']);?></span></td>
+    
+        <td class="scol-2"><a href="<?php echo U('listseo/'.$Game['seourl']);?>"><img src="__PUBLIC__/Upload/Product/<?php echo $Game['logo']?>" title="<?php echo $Game['gamename']?>"><em><?php echo $Game['gamename']?></em></a></td>
+       <td class="scol-3"><em><?php echo $dv['server']?></em></td>
+        <td class="scol-6">
+            <?php 
+                $os=explode(",",$dv['os']);
+
+                if($os[0]==1){
+            ?>
+                <i class="and spr"></i>
+            
+            <?php } if($os[1]==2  OR $os[0]==2){?>    
+                 <i class="ios spr"></i>
+            <?php }?>                
+        </td>
+          <td class="scol-7">
+            <a class="tbtn-2 spr" href="<?php echo U('listseo/'.$Game['seourl']);?>"></a>
+        </td>
+        <td class="scol-8">
+            <a target="_blank" href="<?php echo U('Lbxq/'.$Game['id']);?>" class="g-btn">领取</a>
+        </td>
+    </tr>
+    <?php }?>
+    
+    </tbody>
+</table>
+</section>
+<section style="display:none;">
+<table class="stest-list" cellpadding="0" cellspacing="0" id="contentWrapper">
+<thead>
+<tr style="background: #f6f6f6;border-top: 1px solid #dcdcdc;">
+<td class="scol-1" style="border-left:3px solid #fff;">开服时间</td>
+<td class="scol-2">游戏名称</td>
+<td class="scol-3">服务器名</td>
+<td class="scol-6">游戏平台</td>
+<td class="scol-7">下载</td>
+<td class="scol-8" style="border-right:3px solid #fff;">领号</td>
+</tr>
+</thead>
+<tbody>
+  <?php foreach ($Yeskaifu as $dk => $dv) {
+            $Game=M('gameinfo')->where("gamename='".$dv['gamename']."'")->find();
+            if(empty($Game)){
+                continue;
+            }
+    ?>
+    <tr class="bg-g">
+        <td class="scol-1"><em><?php echo date('m-d',$dv['kfday']);?></em><span><?php echo date("H:i",$dv['kdtime']);?></span></td>
+    
+        <td class="scol-2"><a href="<?php echo U('listseo/'.$Game['seourl']);?>"><img src="__PUBLIC__/Upload/Product/<?php echo $Game['logo']?>" title="<?php echo $Game['gamename']?>"><em><?php echo $Game['gamename']?></em></a></td>
+       <td class="scol-3"><em><?php echo $dv['server']?></em></td>
+        <td class="scol-6">
+            <?php 
+                $os=explode(",",$dv['os']);
+
+                if($os[0]==1){
+            ?>
+                <i class="and spr"></i>
+            
+            <?php } if($os[1]==2  OR $os[0]==2){?>    
+                 <i class="ios spr"></i>
+            <?php }?>                
+        </td>
+          <td class="scol-7">
+            <a class="tbtn-2 spr" href="<?php echo U('listseo/'.$Game['seourl']);?>"></a>
+        </td>
+        <td class="scol-8">
+            <a target="_blank" href="<?php echo U('Lbxq/'.$Game['id']);?>" class="g-btn">领取</a>
+        </td>
+    </tr>
+    <?php }?>
+    
+
+</tbody>
+</table>
+</section>
+
+
+</div>
+
+<script>
+$(function () {
+$('.news_tab li').click(function () {
+var index = $(this).index();
+$(this).addClass('hover').siblings('li').removeClass('hover');
+$('section').eq(index).show().siblings('section').hide();
+})
+
+
+$('.label-widget').click(function(){
+$('body,html').animate({scrollTop:0},500);
+
+$('.news_tab li').eq(0).removeClass('hover');
+$('.news_tab li').eq(1).addClass('hover');
+$('section').eq(0).hide();
+$('section').eq(1).show();
+})
+
+
+})
+
+</script>
+</block>

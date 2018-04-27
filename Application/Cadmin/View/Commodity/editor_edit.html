@@ -1,0 +1,88 @@
+<extend name="Base/base"/>
+<block name="body">
+    <ul class="breadcrumb">
+        <li><a href="{:U('Public/show')}"><i class="fa icon-home"></i></a></li>
+        <li>{$channelName}</li>
+    </ul>
+    <div class="headline">
+        <h2>{$channelName}</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-2">
+
+        </div>
+        <div class="col-md-5 col-sm-8">
+            <form role="form" action="{:U('Commodity/setEditor')}" method="post" id="Brand_form">
+                <!--<div class="form-group">-->
+                <!--<label for="weight">权重</label>-->
+                <!--<input type="text" name="weight" value="{$item.weight}" id="weight">-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label for="title">小编名字:<span></span></label>
+                    <input type="text" name="editor_name" value="{$item.editor_name}" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="preview_cover">小编头像Logo:</label><br>
+                    <empty name="item.editor_icon">
+                        <img id="preview_cover" />
+                        <else />
+                        <img src="__ROOT__{$item.editor_icon}"/>
+                    </empty>
+                </div>
+                <input type="hidden" name="editor_id" value="{$item.editor_id}">
+                <input type="hidden" name="editor_icon" id="cover" value="{$item.editor_icon}">
+            </form>
+            <form role="form">
+                <div id="queue"></div>
+                <input id="cover_upload" type="file" multiple="true"><br>
+                <empty name="item.logo">
+                    <img id="preview_img" />
+                    <else />
+                    <img src="__ROOT__{$item.logo}"/>
+                </empty>
+            </form>
+            <button type="button" class="btn btn-default" id="add_Brand">添加</button>
+
+        </div>
+        <div class="col-md-5 col-sm-2">
+
+        </div>
+    </div>
+
+</block>
+<block name="script">
+    <script src="__STATIC__/plugins/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/plugins/uploadify/uploadify.css">
+    <script type="text/javascript">
+        $(function(){
+            $("#add_Brand").click(function(){
+                $("#Brand_form").submit();
+            });
+
+            $('#cover_upload').uploadify({
+                'swf'      : '__STATIC__/plugins/uploadify/uploadify.swf',
+                'uploader' : '{:U("Commodity/uploadImg",array("type"=>2))}',
+                'onUploadSuccess': funCompletePic,          //完成上传任务
+                'OnError': funError                             //上传发生错误时
+            });
+            //图片上传发生的事件
+            function funCompletePic(fileObj, response, data) {
+                // alert('上传事件');
+                var res = JSON.parse(response);
+                if (response == 0) {
+                    alert('图片' + fileObj.name + '操作失败');
+                    return false;
+                }else{
+                    $('#preview_cover').attr('src',res.img_path);
+                    $("#cover").val(res.db_path);
+                    return true;
+                }
+            }
+            //上传发生错误时。
+            function funError(event, ID, fileObj, errorObj) {
+                alert(errorObj.info);
+                return;
+            }
+        });
+    </script>
+</block>

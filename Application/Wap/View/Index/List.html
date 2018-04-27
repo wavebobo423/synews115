@@ -1,0 +1,289 @@
+<block name="title">
+  <title>{$Game['gamename']}_{$Game['gamename']}公益服_{$Game['gamename']}变态版无限元宝服_{$Game['gamename']}官网_115手机游戏</title>
+</block>
+
+<block name="keywords">
+    <meta name="keywords" content="{$Game['gamename']}sf,{$Game['gamename']}公益服,{$Game['gamename']}无限元宝,{$Game['gamename']}破解版,{$Game['gamename']}变态版,{$Game['gamename']}官网">
+</block>
+<block name="description">
+    <meta name="description" content="{$Game['gamename']}官网提供最新{$Game['gamename']}私服,变态版{$Game['gamename']}公益服,及{$Game['gamename']}游戏攻略,礼包激活码等,为喜爱手游私服的玩家提供免费的手机游戏公益服下载。">
+</block>
+<extend name="Public:main" />
+<block name="main">
+<script>(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?d42502afa9cd991058304b69de39a699":"https://jspassport.ssl.qhimg.com/11.0.1.js?d42502afa9cd991058304b69de39a699";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+    <link href="__PUBLIC__/Wap/css/mui.min.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Wap/css/app.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Wap/css/global.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Wap/css/style.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Wap/css/download.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/Wap/css/tabscroll.css" rel="stylesheet" type="text/css">
+    <script src="__PUBLIC__/Wap/js/hm.js"></script><script type="text/javascript" src="__PUBLIC__/Wap/js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Wap/js/netgame.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Wap/js/TouchSlide.1.1.js"></script>
+
+<div class="cover-1"></div>
+
+<div class="logbg" style="display:none;"></div>
+<!-- <div id="first-view" class="pic-mask">
+    <div class="slider-wrap pic-wrap" id="sliderWrap" style="overflow: hidden; visibility: visible;">
+        <ul class="pic-main" style="width: 6745px; list-style: none; margin: 0px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+        <li class="pic-img" style="width: 1349px; display: table-cell; vertical-align: top;"><img src="__PUBLIC__/Wap/css/5994f98569b77.jpg" style="max-width: 1079.2px;"></li><li class="pic-img" style="width: 1349px; display: table-cell; vertical-align: top;"><img src="__PUBLIC__/Wap/css/5994f98ddb10f.jpg" style="max-width: 1079.2px;"></li><li class="pic-img" style="width: 1349px; display: table-cell; vertical-align: top;"><img src="__PUBLIC__/Wap/css/5994f9a5a0984.jpg" style="max-width: 1079.2px;"></li><li class="pic-img" style="width: 1349px; display: table-cell; vertical-align: top;"><img src="__PUBLIC__/Wap/css/5994f9b55a102.jpg" style="max-width: 1079.2px;"></li><li class="pic-img" style="width: 1349px; display: table-cell; vertical-align: top;"><img src="__PUBLIC__/Wap/css/5994f9bd8e3dd.jpg" style="max-width: 1079.2px;"></li></ul>
+    </div>
+    <div class="pic-cover"></div>
+    <div id="picNav" class="slide-nav"><span class="curr"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+</div> -->
+<div class="full"></div>
+<div class="gamedeta">
+    <div class="az_title">
+        <a href="__MODULE__/Index" class="green">首页</a> &gt;
+        <a href="__MODULE__/Game">游戏中心</a> &gt; {$Game['gamename']}    </div>
+    <div class="gamexx" style="padding: 10px 10px 10px 10px;">
+        <img src="__PUBLIC__/Upload/Product/<?php echo $Game['logo']?>" width="60" height="60" alt="<?php echo $Game['gamename']?>">
+        <p>
+            <span class="name"><?php echo $Game['gamename']?></span>
+            <span class="platf">下载次数：&nbsp;<?php echo $Game['downloadcount']?><span style="float:right;margin-right:8px">大小：<?php echo $Game['gamesize']?></span></span>
+            <span class="platf" style="line-height: 25px;">类型：&nbsp;<span class="mui-ellipsis" style="color:#2FA52D;width: 103px;height: 17px;"> <?php 
+                      $typeid=explode(',',$Game['label']);
+                      $gamelabel1=M('Gamelabel')->find($typeid[0]);
+                      $gamelabel2=M('Gamelabel')->find($typeid[1]);
+                      echo $gamelabel1['labelname']."&nbsp;".$gamelabel2['labelname'];
+                ?></span><span style="float:right">时间：<?php echo date("Y-m-d",$Game['gametime']);?></span></span>
+        </p>
+        <div class="download-btn" id="dl-btn" style="display: flex;margin-top:100px;width:100%">
+            <a href="__MODULE__/Down/<?php echo $Game['id']?>" title="进入下载" class="np2 download" style="width:43%;background: #2FA52D;">
+                    <img src="__PUBLIC__/Wap/img/android.png" style="width:30px;height:30px;margin-top:3px;margin-left:5%" alt="">
+                    <span style="font-size: 16px;line-height: 38px;margin-right: 8px">安卓下载</span>
+                </a>&nbsp;          
+                <?php if(!empty($Game['iosdownload'])){?>             
+                 <a href="__MODULE__/Downios/<?php echo $Game['id']?>" title="进入下载" class="p2 download" style="width:43%;background:#1391f5;">
+                <img src="__PUBLIC__/Wap/img/apple.png" style="width:30px;height:30px;margin-top:3px;margin-left:5%" alt="">
+                    <span style="font-size: 16px;line-height: 38px;margin-right: 8px">IOS下载</span>
+                <?php }else{?>
+                 <a href="javascript:;" title="进入下载" class="p2 download" style="width:43%;background: #1391f5;">
+                <img src="__PUBLIC__/Wap/img/apple.png" style="width:30px;height:30px;margin-top:3px;margin-left:5%" alt="">
+                    <span style="font-size: 16px;line-height: 38px;margin-right: 8px;">IOS暂无地址</span>
+                <?php }?>
+            </a>        </div>
+    </div>
+
+    <div class="gamegift">
+    </div>
+        <div style="margin:0 10px;">
+        <div class="horizontal horizon" id="shotCont" style="height: 210px;">
+            <div id="scroller" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                <ul id="shotUl" class="shot-ul clearfix" style="width: 700px;">
+                    <?php 
+                        $img=explode(',',$Game['imgall']);
+                        foreach($img as $k=>$v){
+                    ?>
+                    <li>
+                            <img data-original="<?php echo $v?>" src="<?php echo $v?>">
+                        </li>  
+                    <?php }?>               
+               </ul>
+            </div>
+        </div>
+    </div>
+    <div class="gamegifb">
+    </div>
+    <div class="gamejs">
+        <h2>游戏介绍</h2>
+        <hr>
+        <div>
+           <?php echo $Game['details']?> 
+        </div>
+       <!--  <h2>精彩瞬间</h2>
+            <hr>
+            <div>
+                <img src="__PUBLIC__/Wap/css/5994fc6870f02.gif" style="width:100%">
+            </div> -->
+        <div id="leftTabBox" class="tabBox line padding-right padding-left">
+            <div class="hd" style="border-top: 0">
+                <h2>特色介绍</h2>
+                <ul>
+                    <li class="on"><a style="color:#fff;" href="javascript:void(0)">福利设置</a></li>
+                    <li class=""><a style="color:#fff;" href="javascript:void(0)">充值返利</a></li>
+                    <li class=""><a style="color:#fff;" href="javascript:void(0)">Vip价格表</a></li>
+                </ul>
+            </div>
+    <style>
+        .download-notice {
+            border: 1px solid #E5E7DB;
+            color: #FDAA62;
+            padding: 15px 10px;
+            margin: 10px 0;
+            overflow: hidden;
+            background: #FBFDF5 url(__PUBLIC__/Wap/img/icon-download-notice.gif) no-repeat 10px center;
+            padding-left: 50px;
+        }
+        .download-notice li {
+    background: url(__PUBLIC__/Wap/img/icon-download-notice-li.gif) no-repeat left center;
+                    padding-left: 13px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #FF7200;
+                }
+        }
+    </style>
+            <ul class="download-notice">
+                         <li>游戏充值后，请在24小时内向客服申请返利！</li>
+                         <li>客服1号QQ:390373977</li>
+                         <li>客服1号微信:btsy115</li>
+
+            </ul>
+            <div class="tempWrap">
+                <div class="tempWrap" style="overflow: hidden; position: relative; "><div class="bd" id="tabBox1-bd" style="width: 3987px; position: relative; overflow: hidden; padding: 0px; margin: 0px; transition-duration: 200ms; transform: translate(0px, 0px) translateZ(0px);">
+                    <div class="con" style="display: table-cell; vertical-align: top; width: 1329px;">
+                        <!-- 高度自适应需添加外层 -->
+                        <ul>
+                            <div class="text-left text-small text-gray">
+                                 <?php echo $Game['gamets']?>                            
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="con" style="display: table-cell; vertical-align: top; width: 1329px;">
+                        <ul>
+                            <div class="text-left text-small text-gray">
+                               
+                                <?php echo $Game['gamefl']?>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="con" style="display: table-cell; vertical-align: top; width: 1329px;">
+                        <ul>
+                            <div id="vip_ajax" class="text-left text-small text-gray  vip">
+                                VIP等级 价格<br>
+                               <?php echo $Game['gamevip']?>
+                              </div>
+                        </ul>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="gamegift">
+    </div>
+    <div class="download-bottom" style="vertical-align: middle;text-align: center;width: 100%;height:auto;">
+        <!--<a class="addqq" style="width:45%" target="_blank"-->
+           <!--href="http://wpa.qq.com/msgrd?v=3&uin=1994509845&site=qq&menu=yes" >游戏客服-->
+        <!--</a>-->
+        <a class="addqq" style="width:45%" href="<?php echo WEB_KFQQ;?>" target="_blank" title="联系客服" >游戏客服</a>
+
+        <a class="addqqqun" style="width:45%" target="_blank" title="玩家交流群" href="<?php echo WEB_QQQUN;?>">玩家交流群</a>    </div>
+    <div class="gamegifb">
+    </div>
+    <div class="youLike">
+        <h2>猜您喜欢</h2>
+        <ul>
+            <?php foreach($Gameremen as $k=>$v){?>
+               <li>
+                    <a href="__MODULE__/listgame/<?php echo $v['id']?>">
+                        <img src="__PUBLIC__/Upload/Product/<?php echo $v['logo']?>" style="height: 40px;width:40px">
+                        <p class="mui-ellipsis"><?php echo $v['gamename']?></p>
+                    </a>
+                </li>
+            <?php }?>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function () {
+        TouchSlide({
+            slideCell: "#leftTabBox",
+            endFun: auto_height
+        });
+    });
+
+    function auto_height(i) {
+        var bd = document.getElementById("tabBox1-bd");
+        bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + "px";
+        if (i > 0) bd.parentNode.style.transition = "200ms";//添加动画效果
+    }
+</script>
+
+<a href="javascript:void(0);" title="返回顶部" class="goTop" style=""></a>
+
+<include file="Public:footer" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#apkclose").click(function () {
+            $(".ui-footer-btnall").hide();
+        });
+    });
+</script>
+
+<script src="__PUBLIC__/Wap/js/mui.min.js"></script>
+
+<script type="text/javascript" src="__PUBLIC__/Wap/js/netgame.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Wap/js/iscroll.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Wap/js/sliderNew.js"></script>
+<script src="__PUBLIC__/Wap/js/dropload.min.js"></script>
+<script src="__PUBLIC__/Wap/js/common.js"></script>
+<script src="__PUBLIC__/Wap/js/swiper.min.js"></script>
+
+
+<script type="text/javascript">
+    $('#game').addClass('mui-active');
+</script>
+<script>
+// $('.download').click(function(){
+//     var url = "/Game-downloadRecord.html";
+//     var gid = "399";
+//     $.post(url,{gid:gid},function(){
+
+//     });
+// })
+// $('.login').click(function(){
+//     var username = $('#username').val();
+//     var password = $('#password').val();
+//     if(username == '' || password == ''){
+//         alert('请输入用户名或密码');
+//         return false;
+//     }
+//     $('#login').submit();
+//    $.post(url,{username:username,password:password},function(data){
+//        if(data.status == 1){
+//            $('.userInfo').css('left','100%');
+//            $('.logbg').css('display','none');
+//            $('#userBtn1').addClass('tlogin');
+//            $('#zc').remove();
+//            $('.loginR').remove();
+//            var info = '<ul>';
+//                info += '<li><img src="'+data.data.avatar+'"><a href="#">'+data.data.uname+'</a><span>普通会员</span></li>';
+//                info += '<li>'+data.data.email+'</li>';
+//                info += '<li><a href="#">我的礼包</a></li>';
+//                info += '<li><a href="/Login-logout">退出</a></li></ul>';
+//            $('.title').after(info);
+//        }else{
+//            alert(data.info);
+//        }
+//    })
+// })
+// $('.reg').click(function(){
+//     var regname = $('#regname').val();
+//     var regpassword = $('#regpassword').val();
+//     var repassword = $('#repassword').val();
+//     var email = $('#email').val();
+//     var check =  /\w+[@]{1}\w+[.]\w+/;
+//     if(regname == '' || regpassword == '' || repassword == '' || email == ''){
+//         alert('请填写完整注册信息');
+//         return false;
+//     }
+//     if(regpassword != repassword){
+//         alert('两次输入密码不一致');
+//         return false;
+//     }
+//     if(!check.test(email)){
+//         alert('请输入正确邮箱格式');
+//         return false;
+//     }
+//     $('#reg').submit();
+// })
+</script>
+</block>

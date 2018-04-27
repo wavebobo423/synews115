@@ -1,0 +1,121 @@
+<block name="title">></block>
+<block name="keywords"></block>
+<block name="description"> </block>
+<extend name="Public:main" />
+
+<block name="main">
+<style>
+    body{
+      background:white;
+    }
+</style>
+  <link href="__PUBLIC__/Home/css/pojie_list.css" type="text/css" rel="stylesheet">
+  <!--main:begin-->
+  <div id="wrap" style="padding:10px;">
+    <div class="ngGprs">
+      <span class="gprs"></span>您的位置：<a href="http://www.3733.com/index.html">首页</a>&nbsp;&gt;&nbsp;高级搜索</div>
+    <div class="ngTitle">
+      <h2 class="w120">分类筛选</h2>
+      <span class="new">共找到<em>{$count}</em>款游戏</span>
+    </div>
+      <ul class="select">
+                <li class="select-list">
+                    <dl id="select1">
+                        <dt>游戏平台：</dt>
+                    <dd <?php echo $_SESSION['os']==""?'class="select-all selected"':'';?>>
+                        <a href="__MODULE__/Game/Index/os/a">全部</a>
+                    </dd>
+                    <dd <?php echo $_SESSION['os']==1?'class="select-all selected"':'';?>>
+                        <a href="__MODULE__/Game/Index/os/1">安卓</a>
+                    </dd>
+                    <dd <?php echo $_SESSION['os']==2?'class="select-all selected"':'';?>>
+                        <a href="__MODULE__/Game/Index/os/2">IOS</a>
+                    </dd>
+                    </dl>
+                </li>
+                <li class="select-list">
+                  <dl id="select1">
+                    <dt>游戏类型：</dt>
+                    <dd id="gtype_bt" <?php echo $_SESSION['bb']==""?'class="selected"':'';?>>
+                        <a href="__MODULE__/Game/Index/bb/1">BT版</a>
+                    </dd>
+                    <dd id="gtype_cb" <?php echo $_SESSION['bb']==19?'class="selected"':'';?>>
+                            <a href="__MODULE__/Game/Index/bb/2">满Vip版</a>
+                    </dd>
+                  </dl>
+                </li>
+                <li class="select-list">
+                    <dl id="select1"><dt>游戏类型：</dt>
+                    <dd  <?php echo $_SESSION['lx']==""?'class="selected"':'';?>>
+                        <a href="__MODULE__/Game/Index/lx/a">全部</a>
+                    </dd>
+                    <?php for($i=0;$i<17;$i++){?>
+                    <dd <?php echo $_SESSION['lx']==$Gamelabel[$i]['labelid']?'class="selected"':'';?>>
+                        <a href="__MODULE__/Game/Index/lx/<?php echo $Gamelabel[$i]['labelid']?>"><?php echo $Gamelabel[$i]['labelname']?></a>
+                    </dd>
+                    <?php }?>
+                    </dl>
+                </li>
+            </ul>     
+
+      <!-- <div class="result_tab">
+        <ul>
+          <li class="on"><a>游戏</a></li>
+          <li><a>礼包</a></li>
+        </ul>
+      </div> -->
+
+      <section>
+        <div class="listTab">
+          <p>
+            搜索到与“<strong>{$keyword}</strong>”相关的网游结果<strong>{$count}</strong>个。
+          </p>
+        </div>
+        <div class="layout clearfix">
+          <ul class="lineList">
+          <?php foreach($data as $key=>$v){?>
+            <li><a href="<?php echo U("listseo/".$v['seourl'])?>" class="gIcon" target="_blank"> <span class="mask120"></span> <img src="__PUBLIC__/Upload/Product/<?php echo $v['logo'];?>" alt="<?php echo $v['gamename']?>">
+          </a>
+            <dl>
+              <dt>
+                <h4>
+                  <a href="<?php echo U("listseo/".$v['seourl'])?>" target="_blank" title="<?php echo $v['gamename']?>"> <?php echo $v['gamename']?>
+                  </a> 
+                </h4>
+              </dt>
+              <dd class="intro">
+                <p>
+                                  
+				  </em> <span>状态：</span> <em>运营</em> <span>类型：</span><em><?php 
+                      $typeid=explode(',',$v['label']);
+                      $gamelabel1=M('Gamelabel')->find($typeid[0]);
+                      $gamelabel2=M('Gamelabel')->find($typeid[1]);
+                      echo $gamelabel1['labelname']."&nbsp;".$gamelabel2['labelname'];
+                ?></em>
+                  
+                  <span>更新时间：</span> <em> <?php echo date("Y-m-d",$v['gametime'])?> 
+                  </em>
+                </p>
+                <p>
+                  <span>简介：</span><?php echo $v['duction']?>
+                </p>
+              </dd>
+              <dd class="bLine">
+                <a target="_blank" href="<?php echo U("listseo/".$v['seourl'])?>" class="listBtn"> <span class="zBtn">游戏专区</span></a>                
+                  <a target="_blank" href="__MODULE__/Lb/Lbxq/gamename/<?php echo $v['id'];?>" class="listBtn"> <span class="gBtn">领取礼包</span></a>
+                 <a href="<?php echo U("listseo/".$v['seourl'])?>" class="listBtn"><span class="dlBtn">点击下载</span></a>
+              </dd>
+            </dl>
+			</li> 
+    <?php }?>
+                          
+          </ul>
+
+        </div>
+       <!-- <div class="pageBox"> -->
+             {$show}
+          <!-- </div> -->
+      </section>
+
+  </div>
+</block>

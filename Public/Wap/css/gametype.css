@@ -1,0 +1,55 @@
+ .zx_nav {
+    overflow: hidden;
+    background: #fff;
+    padding: 0px 0px 3px 0px;
+    border-bottom: 1px solid #d2d2d2;
+}
+ol, ul, li {
+    list-style: none;
+}
+.zx_nav ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding-bottom: 8px;
+}
+.zx_nav ul li.zx_01 {
+    background: url(../img/cj_19.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_02 {
+    background: url(../img/cj_07.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_03 {
+    background: url(../img/cj_09.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_04 {
+    background: url(../img/cj_17.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_05 {
+    background: url(../img/cj_03.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_06 {
+    background: url(../img/cj_05.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_07 {
+    background: url(../img/cj_15.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li.zx_08 {
+    background: url(../img/cj_16.png) center 10px no-repeat;
+    background-size: 50px 50px;
+}
+.zx_nav ul li a {
+    width: 50px;
+    font-size: 12px;
+    color: #9d9d9d;
+    padding-top: 64px;
+    display: block;
+    margin: 0 auto;
+}

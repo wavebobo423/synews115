@@ -1,0 +1,72 @@
+<extend name="Base/base"/>
+<block name="body">
+    <ul class="breadcrumb">
+        <li><a href="{:U('Industry/index')}"><i class="fa icon-home"></i></a></li>
+        <li>{$channelName}</li>
+    </ul>
+    <div class="headline">
+        <h2>{$channelName}</h2>
+    </div>
+    <p class="pull-left">
+        <a class="btn btn-info btn-sm" href="{:U('Industry/add?type=1')}" target="_blank"><i class="fa icon-plus-square"></i>添加岗位</a>
+        <a class="btn btn-info btn-sm" href="{:U('Industry/add?type=2')}"><i class="fa icon-plus-square"></i>添加分类</a>
+        <a class="btn btn-info btn-sm" href="{:U('Industry/add?type=3')}" target="_SELF"><i class="fa icon-plus-square"></i>添加行业</a>
+    </p>
+    <form action="__SELF__" method="get" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <select name="cname" class="form-control">
+                <option value="">--行业选择--</option>
+                <volist name="list" id="vo">
+                    <option value="{$vo.cname}" <if condition="$Think.get.cname eq $vo['cname']">selected</if> >{$vo.cname}
+                    </option>
+                </volist>
+            </select>
+        </div>
+        <input type="text" name="pname" class="form-control" placeholder="输入分类名" value='{$Think.get.pname}'>
+        <button type="submit" class="btn btn-default" id="search">搜索</button>
+    </form>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <!-- <th>ID</th> -->
+            <th>岗位名称</th>
+            <th>所属分类</th>
+            <th>所属行业</th>
+            <th>状态</th>
+            <!-- <th>创建</th> -->
+            <!-- <th>上次登录</th> -->
+            <!-- <th>Last Login time</th> -->
+            <!-- <th>Last email time</th> -->
+            <th style="width: 330px;">操作</th>
+        </tr>
+        <volist name="items" id="item">
+            <tr>
+                <!-- <td class="id">{$item.id}</td> -->
+                <td><a href="{:U('Industry/editpcate?op=1'.'&id='.$item['s_id'].'&sname='.$item['sname'])}">{$item.sname}</a></td>
+                <td><a href="{:U('Industry/editpcate?op=2'.'&id='.$item['p_id'].'&pname='.$item['pname'])}">{$item.pname}</a></td>
+                <td><a href="{:U('Industry/editpcate?op=3'.'&id='.$item['g_id'].'&cname='.$item['cname'])}">{$item.cname}</a></td>
+                <td><if condition="$item.status eq 1">锁定
+                    <else/>正常</if>
+                </td>
+                <!-- <td>{$item.ctime|date="Y-m-d H:i", ###}</td> -->
+                <!-- <td>{$item.atime|date="Y-m-d H:i", ###}</td> -->
+                <!-- <td>{$item.last_login_time}</td> -->
+                <!-- <td>{$item.last_email_time}</td> -->
+                <td class="options">
+                    <a class="btn btn-sm btn-primary confirm ajax-status" href="{:U('updateStatus', array('sname' => $item['sname'],'status'=>$item['status']))}"><if condition="$item.status eq 1"><i class="fa icon-unlock"></i>&nbsp;解锁
+                    <else/><i class="fa icon-lock"></i>&nbsp;锁定</if></a>
+                    <if condition="$Think.session.level eq 1">
+                        <a class="btn btn-sm btn-primary" href="{:U('delete', array('sname' => $item['sname']))}" ><i class="fa icon-trash"></i>&nbsp;删除</a>
+                    </if>
+                </td>
+            </tr>
+        </volist>
+    </table>
+    <!-- <ul class="pagination">
+        <li class="disabled"><span>&laquo;</span></li>
+        <volist item='paginam'>
+        <li class="active"><span>{$pagination}<span class="sr-only">(current)</span></span></li>
+</ul> <-->
+    <center>
+        {$pagination}
+    </center>
+</block>

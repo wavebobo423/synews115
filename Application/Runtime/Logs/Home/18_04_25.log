@@ -1,0 +1,64 @@
+[ 2018-04-25T17:17:31+08:00 ] 123.57.118.192 /Lb/Index/m/home/index/m/home/index/lbxq/32/p/5/_/_/Lbxq/_/Lbxq/_/Lbxq/_/Lbxq/_/Lbxq/20.html
+NOTIC: [2] mkdir(): File exists /ROOT/synews/ThinkPHP/Library/Think/Build.class.php 第 110 行.
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `sy_webconfig` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `sy_webconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `sy_gameinfo` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`gamename`,`seourl` FROM `sy_gameinfo` WHERE ( score!="" ) ORDER BY score desc LIMIT 5   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `sy_libao` [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: where /ROOT/synews/Application/Home/Controller/LbController.class.php 第 25 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `sy_libao` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: where /ROOT/synews/Application/Home/Controller/LbController.class.php 第 33 行.
+SQL: SELECT * FROM `sy_libao` ORDER BY id desc LIMIT 80,20   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_libao` ORDER BY istj desc LIMIT 20   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index: lb_select2 /ROOT/synews/Application/Runtime/Cache/Home/78fe2f79d9883258300d6330d01af0f3.php 第 180 行.
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=14 ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 1 /ROOT/synews/Application/Runtime/Cache/Home/78fe2f79d9883258300d6330d01af0f3.php 第 197 行.
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=56 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /ROOT/synews/Application/Runtime/Cache/Home/78fe2f79d9883258300d6330d01af0f3.php 第 197 行.
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=59 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=57 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /ROOT/synews/Application/Runtime/Cache/Home/78fe2f79d9883258300d6330d01af0f3.php 第 197 行.
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=57 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /ROOT/synews/Application/Runtime/Cache/Home/78fe2f79d9883258300d6330d01af0f3.php 第 197 行.
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=87 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 1 /ROOT/synews/Application/Runtime/Cache/Home/78fe2f79d9883258300d6330d01af0f3.php 第 197 行.
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=87 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=57 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=57 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=59 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=56 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=14 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=12 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=288 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=21 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=307 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=307 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=321 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=67 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=336 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=340 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=91 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=75 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `sy_gameinfo` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019515s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019544s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000318s ]
+

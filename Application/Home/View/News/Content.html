@@ -1,0 +1,365 @@
+<block name="title">
+    <title>{$data['title']}_{$nowGame['gamename']}_115手机游戏</title>
+</block>
+<block name="keywords">
+    <meta name="keywords" content="{$nowGame['gamename']}官网,{$nowGame['gamename']}私服,{$nowGame['gamename']}公益服,{$nowGame['gamename']}攻略">
+</block>
+<block name="description">
+    <meta name="description" content="{$nowGame['details']}">
+</block>
+<extend name="Public:main" />
+<block name="main">
+<style>
+    body{
+      background:white;
+    }
+</style>
+<link rel="stylesheet" href="__PUBLIC__/Home/css/Index/inner_w.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/newsdetail.js"></script> 
+    <!--main:begin-->
+    <div id="wrap">
+        <div class="ngGprs">
+                       <span class="gprs"></span>您的位置：<a href="__MODULE__/Index">首页</a>&nbsp;>&nbsp;<a href="/News">资讯</a>&nbsp;>&nbsp;<a href="/Newstype/2">活动</a> > {$data['title']}                  </div>
+        <div class="content">
+            <div class="news-box">
+               
+                <div class="article">
+                    <h1>{$data['title']}</h1>
+                    <div class="article-info">
+                         <span class="article-from">来源：115手游</span>
+                        <span>作者：admin</span>
+
+                        <span class="article-publish">发表时间：<?php echo date("Y-m-d",$data['createtimenews']);?></span>
+                        <span>查看次数：{$data['clicknumber']}</span>
+                    </div>
+                    <div>
+                         {$data['content']}
+                    </div>
+                    
+
+            <div class="new_ewm me_slideBox">
+                    <div class="bd">
+                        <div class="tempWrap">
+                            <ul class="qiehuan">
+                                <li style="float: left; width: 807px;">
+                                    <p class="p1">微信扫描二维码-免费领取<?php echo WEB_NAME;?>游戏盒子独家礼包</p>
+                                    <p class="p2"><img src="<?php echo substr(WEB_WX,1);?>"></p>
+                                    <p class="p3">扫面二维码关注<?php echo WEB_NAME;?>游戏微信公众号</p>
+                                    <p class="p3">1.回复“<em><?php echo WEB_NAME;?>游戏盒子</em>”，即可获得<?php echo WEB_NAME;?>游戏盒子微信礼包；</p>
+                                    <p class="p3">2.关注“<em><?php echo WEB_NAME;?>   游戏微信公众号</em>”，随时掌握礼包动向；</p>
+                                    <p class="p3">3.关注“<em><?php echo WEB_NAME;?>游戏微信公众号</em>”，提交返利更方便；</p>
+                                    <p class="p3">4.<?php echo WEB_NAME;?>微信公众号：<a href="javascript:void(0)" style="text-decoration: none;"><?php echo WEB_NAME;?></a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+            </div>
+
+              <!--       <div class="news-side">
+                    <a href="/news/68682.html" target="_blank" class="prev" title="夏日暴爽!3733游戏夏日返利第五弹：200%哦~"><span>上一篇：</span>夏日暴爽!3733游戏夏日返利第五弹：200%哦~                            </a>
+                 <div class="n_d_top">
+                    <div class="n_d_t_left">
+                        <a title="3733游戏盒子" href="/679/">
+                                <img src="http://pic3.3733.com/d/file/game/2016-11-21/35d4b6185ea9a5ab08e0d9dd22d95f8a.jpg" alt="">
+                            </a>
+                    </div>
+                    <div class="n_d_t_center">
+                        <p>
+                            <a title="3733游戏盒子" href="/679/">
+                                3733游戏盒子                            </a>
+                        </p>
+                        <span>
+                                <a>类型：&nbsp;其他&nbsp;</a>
+                                <a>版本：1.4.7</a>
+                                <a>大小：6.3MB</a>
+                                |
+                                <i>人气：<b>342633</b></i>
+                            </span>
+                                                    <em class="four">
+                <a href="http://www.3733.com/game/downs_apk_1_679.html">高速下载</a><a href="/game/downs_ipa_100_679.html" style="background: #444;">IOS版下载</a>                 <a href="/679/card.html"><i class="_game_collect" style="background:#f7a131" rel="2832">领取礼包</i></a>
+                                                            </em>
+                    </div>
+                    <div class="n_d_t_right">
+                        <img src="http://pan.baidu.com/share/qrcode?w=150&h=150&url=http://m.3733.com/679/">
+                        <p>手机扫一扫，马上玩</p>
+                    </div>
+                </div>
+              
+                    <div class="breakbox">
+                       
+                    </div>
+                  
+                    <div id="SOHUCS" sid="news_68739"></div>
+                   
+                </div> -->
+            </div>
+            <div class="right-side">
+                
+                <!-- <div class="side-title">
+                    <div class="tit"><i class="icon-rmyx"></i><b>小编推荐</b></div>
+                </div> -->
+              <!--   <div class="qs_game">
+                    <div class="pic">
+                        <a href="http://app.3733.com/" target="_blank" title="3733盒子">
+                                <img src="http://pic3.3733.com/d/file/game/2016-11-21/35d4b6185ea9a5ab08e0d9dd22d95f8a.jpg" alt="3733游戏盒子">
+                            </a>
+                        <p class="tit" style="margin-top:6px;">
+                            <a style="color:black" href="http://app.3733.com/" target="_blank" title="3733游戏盒子">
+                                3733游戏盒子
+                            </a>
+                            <a href="http://www.3733.com/game/downs_apk_1_679.html" style="display: inline-block;color: #74c401;border: 1px solid #74c401; border-radius: 5px; padding: 0px 5px;margin-left: 5px;">安卓下载</a>
+                        </p>
+                        <p class="t"></p>
+                        <p class="info" style="color:grey">版本：
+                            1.4.7
+                        </p>
+                        <p class="info" style="color:grey">
+                            已有1636541次下载
+                        </p>
+                    </div>
+                    <p class="txt" style="width:325px;margin-left: -12px;">简评：
+                        聚合全网所有BT游戏下载，BT游戏尽在3733游戏盒！
+                    </p>
+                </div> -->
+              
+
+                <br>
+                 <div class="side-box">
+                   
+                    <div class="rank-tab">
+                        <div class="tit hover"><i class="icon-wyph"></i><b>热门推荐</b></div>
+                        <div class="tit hover"></div>
+                    </div>
+                    <div class="rank-list">
+                        <ul>
+    <?php 
+         $a=1;
+         foreach($dataselect['game'] as $key=>$value){
+    ?>
+             <li <?php if($a==1){ echo "class='hover'";}?>>
+                <span class="front"><?php echo $a;$a++;?></span>
+                        <div class="rank-detail">
+                            <a href="<?php echo U("listseo/".$value['seourl']);?>" target="_blank" class="rank-img"><img src="__PUBLIC__/Upload/Product/<?php echo $value['logo']?>"></a>
+                            <div class="rank-info">
+                                <a href="<?php echo U("listseo/".$value['seourl']);?>" target="_blank" title="<?php echo $value['gamename']?>">
+                                    <?php echo $value['gamename']?> 
+                                 </a>
+                                 <p>
+                                     大小：<?php echo $value['gamesize']?>
+                                 </p>
+                            </div>
+                            <a href="<?php echo U("listseo/".$value['seourl']);?>" target="_blank" class="download">下载</a>
+                        </div>
+                        <div class="rank-brief">
+                            <a href="<?php echo U("listseo/".$value['seourl']);?>">
+                               <?php echo $value['gamename']?>                                    </a>
+                            <i class="icon-download"></i>
+                        </div>
+                    </li>
+    <?php }?>
+                          </ul>
+                    </div>
+                </div> 
+                <br /><br /><br />
+               <!--  <div class="side-box">
+                    <div class="side-title">
+                        <div class="tit hover">
+                            <i class="icon-rmlb"></i>
+                            <b>热门礼包</b>
+                        </div><a href="/card/" target="_blank">更多礼包<i class="icon-more"></i></a>
+                    </div>
+
+                    <div class="hot-gift">
+                        <ul>
+                                                                                    <li class="hover">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/549.html"><img src="http://pic3.3733.com/d/file/game/2017-03-31/347931dbaca8edd57c5a481024119417.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/549.html"
+                                            title="X战娘VR版新手礼包">
+                                            X战娘VR版新手礼包                                        </a>
+                                        <p>剩余数量：
+                                            2040                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/549.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/549.html">
+                                        X战娘VR版新手礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/706.html"><img src="http://pic3.3733.com/d/file/game/2017-01-19/d61acc1ac42eb01791010d6f3318a0b7.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/706.html"
+                                            title="梦幻战歌ol高级礼包">
+                                            梦幻战歌ol高级礼包                                        </a>
+                                        <p>剩余数量：
+                                            4237                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/706.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/706.html">
+                                        梦幻战歌ol高级礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/607.html"><img src="http://pic3.3733.com/d/file/game/2017-04-26/d33c799decd46c590b0be1005a9f1813.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/607.html"
+                                            title="真江湖HD新手礼包">
+                                            真江湖HD新手礼包                                        </a>
+                                        <p>剩余数量：
+                                            9390                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/607.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/607.html">
+                                        真江湖HD新手礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/606.html"><img src="http://pic3.3733.com/d/file/game/2017-05-19/5f77395f6743890665890d9f0c11395b.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/606.html"
+                                            title="仙灵幻剑特权礼包">
+                                            仙灵幻剑特权礼包                                        </a>
+                                        <p>剩余数量：
+                                            7849                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/606.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/606.html">
+                                        仙灵幻剑特权礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/523.html"><img src="http://pic3.3733.com/d/file/game/2017-03-15/b9d9dba02eecab5f575a1553462e1876.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/523.html"
+                                            title="探墓风云新手礼包">
+                                            探墓风云新手礼包                                        </a>
+                                        <p>剩余数量：
+                                            4193                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/523.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/523.html">
+                                        探墓风云新手礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/438.html"><img src="http://pic3.3733.com/d/file/game/2017-01-22/9f37f8c15ca36fadfe2b054ed0e21416.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/438.html"
+                                            title="宠物小精灵新手礼包">
+                                            宠物小精灵新手礼包                                        </a>
+                                        <p>剩余数量：
+                                            1704                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/438.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/438.html">
+                                        宠物小精灵新手礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/674.html"><img src="http://pic3.3733.com/d/file/game/2017-05-22/9974da5c3474e55ca4acdbab2a8e35b0.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/674.html"
+                                            title="三国萌大奶特权礼包">
+                                            三国萌大奶特权礼包                                        </a>
+                                        <p>剩余数量：
+                                            978                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/674.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/674.html">
+                                        三国萌大奶特权礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/696.html"><img src="http://pic3.3733.com/d/file/cb/2017-03-27/dc5afb0b8d88b27e5485119688a5bb96.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/696.html"
+                                            title="天道3D独家礼包">
+                                            天道3D独家礼包                                        </a>
+                                        <p>剩余数量：
+                                            1004                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/696.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/696.html">
+                                        天道3D独家礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/698.html"><img src="http://pic3.3733.com/d/file/game/2017-05-31/5495839a179ce09df5c82aee95f4e7df.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/698.html"
+                                            title="吾有上将独家礼包">
+                                            吾有上将独家礼包                                        </a>
+                                        <p>剩余数量：
+                                            1164                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/698.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/698.html">
+                                        吾有上将独家礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                                                    <li class="">
+                                <div class="gift-detail">
+                                    <a class="gift-img" target="_blank" href="/card/660.html"><img src="http://pic3.3733.com/d/file/game/2017-05-12/e5ef70708911a8ce7b340f6d5eab34c6.png"></a>
+                                    <div class="gift-info">
+                                        <a style="width: 150px;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;" target="_blank" href="/card/660.html"
+                                            title="梦幻加强版独家礼包">
+                                            梦幻加强版独家礼包                                        </a>
+                                        <p>剩余数量：
+                                            5760                                        </p>
+                                    </div>
+                                    <a class="get-gift" target="_blank" href="/card/660.html">领取</a>
+                                </div>
+                                <div class="gift-brief">
+                                    <a href="/card/660.html">
+                                        梦幻加强版独家礼包                                    </a>
+                                    <i class="icon-gift"></i>
+                                </div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div> -->
+                <div class="side-box">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</block>

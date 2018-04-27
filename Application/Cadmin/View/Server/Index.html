@@ -1,0 +1,128 @@
+<extend name="Base/base" />
+<block name="body">
+    <style>
+        #pro_nav a button{
+            margin-left: 100px;
+        }
+        #pro_nav button a{
+
+        }
+    </style>
+    <!-- main content -->
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa icon-home"></i></a></li>
+        <li><a href="{:U('index')}">游戏列表</a></li>
+        <li class="active">{$item['id']?'修改网站配置':'添加网站配置'}</li>
+    </ol>
+    <div class="headline">
+        <h3>{$item['id']?'修改网站配置':'添加网站配置'}</h3>
+    </div>
+    <p></p>
+    <hr>
+        <form   action="{:U($url)}" method="post" enctype="multipart/form-data" >
+            <input type="hidden" name="id" value="{$item.id}">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="pro_name">首页网站头部小标题</label>
+                        <input placeholder="网站配置标题" name="webname" id="pro_name" value="{$item.webname}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">首页网站标题</label>
+                        <input placeholder="网站配置标题" name="title" id="pro_name" value="{$item.title}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">首页关键字</label>
+                        <input placeholder="网站配置标题" name="keyword" id="pro_name" value="{$item.keyword}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">PC首页头部标题</label>
+                        <input placeholder="PC首页头部标题" name="pcheadertitle" id="pro_name" value="{$item.pcheadertitle}" class="form-control" style="width:40%;">
+                    </div>
+                   <div class="form-group">
+                        <label for="note" class="required" >首页网站描述:<span></span></label>
+                        <textarea  id="note" class="form-control" name="desc" type="text/plain" rows="2" placeholder="游戏简介">{$item.desc}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="note" class="required" >百度统计带啦(带<script></script>标签):<span></span></label>
+                        <textarea  id="note" class="form-control" name="bdtongji" type="text/plain" rows="2" placeholder="百度统计代码">{$item.bdtongji}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">客服QQ(带http://完成链接)</label>
+                        <input placeholder="网站配置标题" name="kfqq" id="pro_name" value="{$item.kfqq}" class="form-control" style="width:40%;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">QQ群(带http://完成链接)</label>
+                        <input placeholder="网站配置标题" name="qqqun" id="pro_name" value="{$item.qqqun}" class="form-control" style="width:40%;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pro_name">PC端LOGO(240*80)</label>
+                        <input type="file"  name="pclogo" id="pro_name" class="form-control" style="width:40%;">
+                        <img src="<?php echo substr($item['pclogo'],1);?>" alt="" width="100" height="80">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">WAP端LOGO</label>
+                        <input type="file"  name="waplogo" id="pro_name" class="form-control" style="width:40%;"  >
+                        <img src="<?php echo substr($item['waplogo'],1);?>" alt="" width="100" height="80">
+                    </div>
+                    <div class="form-group">
+                        <label for="pro_name">微信公众号(200*200)</label>
+                        <input type="file"  name="wx" id="pro_name" class="form-control" style="width:40%;"  >
+                        <img src="<?php echo substr($item['wx'],1);?>" alt="" width="100" height="80">
+                    </div>
+
+       
+      
+            <button type="submit" class="btn btn-info" >提交</button>
+              <!-- <input type="submit" class="btn btn-info" value="提交"> -->
+
+    </div>
+     </div>
+  </form>
+</block>
+<block name="script">
+
+    <script type="text/javascript">
+        // alert($);
+        $("#pro_game").blur(function(){
+            var name=$(this).val();
+            if(name!=""){
+                $.ajax({
+                    type:"GET",
+                    data:"name="+name,
+                    url:"__MODULE__/News/getGame",
+                    success:function(data){
+                        $("input[name='game']").val("");
+                        $("input[name='game']").val(data[0].id);
+                        $("#alink").empty();
+                        for(var i=0;i<data.length;i++){
+                            var alink="<a href='javascript:selectid("+data[i].id+");' data-name="+data[i].gamename+" id='selectida"+data[i].id+"' >"+data[i].gamename+"</a>&nbsp;";
+                            $("#alink").append(alink);
+                        }
+                    }
+                });
+            }
+        });
+
+
+        function selectid(id){
+            var name=$("#selectida"+id).data('name');
+            $("input[name='game']").val(id);
+            $("#pro_game").val(name);
+        }   
+    </script>
+
+
+     <link href="__PUBLIC__/Static/plugins/UE/themes/default/css/ueditor.css" rel="stylesheet">
+      <script src="__PUBLIC__/Static/plugins/UE/ueditor.config.js"></script>
+      <script src="__PUBLIC__/Static/plugins/UE/ueditor.all.js"></script>
+     <script>
+         var um = UE.getEditor("editor", {
+             initialFrameWidth: 'auto',
+             initialFrameHeight: 400,
+             autoHeightEnabled: true,
+             autoFloatEnabled: false,
+         })
+     </script>
+</block>
