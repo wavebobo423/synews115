@@ -1,6 +1,0 @@
-User-agent: * 
-Disallow: /plus/ad_js.php
-Disallow: /http://www.sy115.com/Public
-Disallow: /http://www.sy115.com/ThinkPHP
-Sitemap: http://www.sy115.com/sitemap.xml
-Sitemap: http://www.sy115.com/sitemap.txt
